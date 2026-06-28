@@ -121,7 +121,7 @@ function Index() {
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
           <a href="#start" className="flex items-center gap-3" aria-label="Vision & Gestalten Startseite">
-            <img src={logo.url} alt="Vision & Gestalten" className="h-7 w-auto sm:h-8" />
+            <img src={logo.url} alt="Vision & Gestalten" className="h-[2.45rem] w-auto sm:h-[2.8rem]" />
           </a>
           <nav className="hidden items-center gap-8 md:flex">
             {NAV.map((n) => (
