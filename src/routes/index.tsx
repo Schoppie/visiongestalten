@@ -121,7 +121,7 @@ function Index() {
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
           <a href="#start" className="flex items-center gap-3" aria-label="Vision & Gestalten Startseite">
-            <img src={logo.url} alt="Vision & Gestalten" className="h-7 w-auto sm:h-8" />
+            <img src={logo.url} alt="Vision & Gestalten" className="h-[2.45rem] w-auto sm:h-[2.8rem]" />
           </a>
           <nav className="hidden items-center gap-8 md:flex">
             {NAV.map((n) => (
@@ -363,11 +363,11 @@ function Index() {
             <div>
               <p className="eyebrow text-primary">Kontakt</p>
               <h2 className="mt-3 text-4xl font-semibold sm:text-5xl">
-                Lassen Sie uns Ihre Vision gestalten
+                Lass uns deine Vision gestalten
               </h2>
               <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground">
-                Sie möchten einen Prozess begleiten lassen, einen Workshop moderieren oder ein
-                Beteiligungsvorhaben starten? Schreiben Sie uns – wir freuen uns auf Ihr Projekt.
+                Du möchtest einen Prozess begleiten lassen, einen Workshop moderieren oder ein
+                Beteiligungsvorhaben starten? Schreib uns – wir freuen uns auf dein Projekt.
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-card p-8 shadow-soft">
