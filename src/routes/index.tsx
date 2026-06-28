@@ -363,11 +363,11 @@ function Index() {
             <div>
               <p className="eyebrow text-primary">Kontakt</p>
               <h2 className="mt-3 text-4xl font-semibold sm:text-5xl">
-                Lassen Sie uns Ihre Vision gestalten
+                Lass uns deine Vision gestalten
               </h2>
               <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground">
-                Sie möchten einen Prozess begleiten lassen, einen Workshop moderieren oder ein
-                Beteiligungsvorhaben starten? Schreiben Sie uns – wir freuen uns auf Ihr Projekt.
+                Du möchtest einen Prozess begleiten lassen, einen Workshop moderieren oder ein
+                Beteiligungsvorhaben starten? Schreib uns – wir freuen uns auf dein Projekt.
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-card p-8 shadow-soft">
