@@ -1,42 +1,35 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
-  Users,
-  MessagesSquare,
-  Handshake,
-  Palette,
   Menu,
   X,
-  Mail,
-  Phone,
-  Smartphone,
-  MapPin,
-  Globe,
   ArrowDown,
+  ArrowRight,
+  Compass,
+  PenTool,
+  Camera,
+  Quote,
+  Sparkles,
 } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
-import logo from "@/assets/vision-gestalten-logo.png.asset.json";
-import heroImg from "@/assets/hero-workshop.jpg";
-import angebotImg from "@/assets/section-angebot.jpg";
-import philosophieImg from "@/assets/section-philosophie.jpg";
-import persoenlichesImg from "@/assets/section-persoenliches.jpg";
+
+import hero from "@/assets/gt/hero.jpg.asset.json";
+import iraRound from "@/assets/gt/ira_round.png.asset.json";
+import eykeRound from "@/assets/gt/eyke_round.png.asset.json";
+import tonjaRound from "@/assets/gt/tonja_round.png.asset.json";
+import iraImg from "@/assets/gt/ira.jpg.asset.json";
+import eykeImg from "@/assets/gt/eyke.jpg.asset.json";
+import tonjaImg from "@/assets/gt/tonja.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vision & Gestalten – Kreative Organisationsentwicklung" },
+      { title: "Global Triangle – Coaching, Grafik & Fotografie in Itzehoe" },
       {
         name: "description",
         content:
-          "Visionsgestalten begleitet Organisationen kreativ: Moderation, Prozessbegleitung, Beteiligung und Gestaltung. Partizipation, Kreativität und Wertschätzung in Hannover.",
+          "Global Triangle in Itzehoe: Business-Coaching, Grafik & Webdesign und Fotografie aus einer Hand. Ira, Eyke und Tonja begleiten dich bei Start und Wachstum.",
       },
-      { property: "og:title", content: "Vision & Gestalten – Kreative Organisationsentwicklung" },
-      {
-        property: "og:description",
-        content:
-          "Kreative Organisationsentwicklung: Moderation, Prozessbegleitung, Beteiligung und Gestaltung für Teams und öffentliche Räume.",
-      },
-      { property: "og:type", content: "website" },
     ],
   }),
   component: Index,
@@ -44,58 +37,73 @@ export const Route = createFileRoute("/")({
 
 const NAV = [
   { id: "start", label: "Start" },
-  { id: "angebot", label: "Angebot" },
-  { id: "philosophie", label: "Philosophie" },
-  { id: "persoenliches", label: "Persönliches" },
+  { id: "leistungen", label: "Leistungen" },
+  { id: "ueber-uns", label: "Über uns" },
+  { id: "team", label: "Team" },
   { id: "kontakt", label: "Kontakt" },
 ];
 
-const ANGEBOTE = [
+const LEISTUNGEN = [
   {
-    icon: MessagesSquare,
-    title: "Moderation",
-    text: "Moderation von Prozessen, Workshops und Großgruppen.",
+    icon: Compass,
+    image: iraRound,
+    title: "Coaching & Mentoring",
+    text: "Als bewährte Business-Coachin erstelle ich individuelle Lösungskonzepte für Firmen und Privatpersonen in Itzehoe und Umgebung. Ich unterstütze deine Ziele im Workout mit meinem umfassenden Coachingwissen.",
   },
   {
-    icon: Users,
-    title: "Prozessbegleitung",
-    text: "Teamentwicklung, Projektentwicklung, Zielfindung und Umsetzung.",
+    icon: PenTool,
+    image: eykeRound,
+    title: "Grafik & Webdesign",
+    text: "Als gelernte Schriftsetzerin und Marketingmanagerin in einer IT-Firma und Freelancerin fehlt mir das Potenzial für Langeweile. Mein Kopf ist voller Ideen und ich liebe es, kreativ zu sein.",
   },
   {
-    icon: Handshake,
-    title: "Beteiligung",
-    text: "Planungsvorhaben, Stadtentwicklung, Identifikation und Demokratisierung.",
-  },
-  {
-    icon: Palette,
-    title: "Gestaltung",
-    text: "Gestaltung öffentlicher Räume im Innen- und Außenbereich.",
+    icon: Camera,
+    image: tonjaRound,
+    title: "Fotografie",
+    text: "Deine Bilder sollen dein Image reflektieren und für dich die richtigen Kunden anziehen. Ich arbeite mit dir und dem Design-Team und setze mich persönlich für deinen Erfolg ein – du sollst authentisch wirken.",
   },
 ];
 
-const WIR_TUN = [
-  "beraten",
-  "gestalten den Rahmen für Beteiligung",
-  "leiten und moderieren den Prozess",
-  "dokumentieren und werten Ergebnisse aus",
-  "entwickeln einen Handlungsplan",
-  "schaffen Projekte mit sichtbaren Ergebnissen",
+const TEAM = [
+  {
+    name: "Ira Köhnke",
+    role: "Coaching & Mentoring",
+    image: iraImg,
+    text: "Ira ist deine Beraterin, die dich positiv coacht und dir alles Wissen anhand gibt, welches du für dein Geschäft – ob Start oder bereits bestehendes Business – benötigst.",
+  },
+  {
+    name: "Eyke Szopieray",
+    role: "Grafik & Webdesign",
+    image: eykeImg,
+    text: "Eyke erstellt dir eine Homepage, Visitenkarten, Beschilderung, Flyer und weitere Gestaltungswünsche – kreativ, klar und mit Wiedererkennungswert.",
+  },
+  {
+    name: "Tonja Fritz-Johnson",
+    role: "Fotografie",
+    image: tonjaImg,
+    text: "Tonja erstellt dir professionelle Fotos mit Einblick in dein neues Business – authentisch und mit dem richtigen Blick für dein Image.",
+  },
 ];
 
-const WERTE = [
-  {
-    title: "Partizipation",
-    text: "Hinter jeder Organisation stehen Menschen mit Ideen und Bedürfnissen. Gebündelt können diese Ressourcen viel bewegen. Wir schaffen Rahmenbedingungen, in denen gemeinsame Ziele, Kreativität und Teamgeist entstehen.",
-  },
-  {
-    title: "Kreativität",
-    text: "Kreativität ist ein Grundbedürfnis des Menschen und eine Haltung. Mit ihr werden Probleme zur Herausforderung – im Spiel mit Material, Farben, Formen und Räumen entsteht ein individuelles Gesamtergebnis.",
-  },
-  {
-    title: "Wertschätzung",
-    text: "In einer wertschätzenden Atmosphäre wachsen Menschen über sich hinaus. Jenseits von Leistungs- und Konkurrenzdruck richten wir den Blick auf Stärken und Ressourcen – Begegnung auf Augenhöhe.",
-  },
-];
+function Logo({ className = "" }: { className?: string }) {
+  return (
+    <span className={`flex items-center gap-3 ${className}`}>
+      <svg viewBox="0 0 40 36" className="h-9 w-auto" aria-hidden>
+        <polygon
+          points="20,3 37,33 3,33"
+          fill="none"
+          stroke="var(--color-gold)"
+          strokeWidth="2"
+          strokeLinejoin="round"
+        />
+        <circle cx="13" cy="24" r="2.4" fill="var(--color-gold)" />
+      </svg>
+      <span className="font-display text-xl font-semibold uppercase tracking-[0.2em] leading-none">
+        Global<span className="text-gold"> Triangle</span>
+      </span>
+    </span>
+  );
+}
 
 function Index() {
   useReveal();
@@ -115,27 +123,27 @@ function Index() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "border-b border-border bg-background/85 backdrop-blur-md shadow-soft"
-            : "bg-transparent"
+            ? "border-b border-border bg-background/85 text-foreground backdrop-blur-md shadow-soft"
+            : "bg-transparent text-navy-foreground"
         }`}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
-          <a href="#start" className="flex items-center gap-3" aria-label="Vision & Gestalten Startseite">
-            <img src={logo.url} alt="Vision & Gestalten" className="h-[2.45rem] w-auto sm:h-[2.8rem]" />
+          <a href="#start" aria-label="Global Triangle Startseite">
+            <Logo />
           </a>
           <nav className="hidden items-center gap-8 md:flex">
             {NAV.map((n) => (
               <a
                 key={n.id}
                 href={`#${n.id}`}
-                className="eyebrow text-foreground/70 transition-colors hover:text-primary"
+                className="eyebrow transition-colors hover:text-gold"
               >
                 {n.label}
               </a>
             ))}
           </nav>
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-label="Menü öffnen"
           >
@@ -143,14 +151,14 @@ function Index() {
           </button>
         </div>
         {open && (
-          <nav className="border-t border-border bg-background/95 backdrop-blur-md md:hidden">
+          <nav className="border-t border-border bg-background/95 text-foreground backdrop-blur-md md:hidden">
             <div className="mx-auto flex max-w-6xl flex-col px-5 py-2">
               {NAV.map((n) => (
                 <a
                   key={n.id}
                   href={`#${n.id}`}
                   onClick={() => setOpen(false)}
-                  className="eyebrow py-3 text-foreground/75 transition-colors hover:text-primary"
+                  className="eyebrow py-3 transition-colors hover:text-gold"
                 >
                   {n.label}
                 </a>
@@ -164,30 +172,33 @@ function Index() {
       <section id="start" className="relative flex min-h-screen items-center">
         <div
           className="parallax absolute inset-0"
-          style={{ backgroundImage: `url(${heroImg})` }}
+          style={{ backgroundImage: `url(${hero.url})` }}
           aria-hidden
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/55 to-background/90" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy/85 via-navy/60 to-navy/85" aria-hidden />
         <div className="relative mx-auto w-full max-w-6xl px-5 pt-24">
-          <div className="max-w-2xl">
-            <p className="eyebrow text-primary">Visionsgestalten · Hannover</p>
-            <h1 className="mt-4 text-5xl font-bold leading-[0.95] text-foreground sm:text-7xl">
-              Kreative<br />Organisations&shy;entwicklung
+          <div className="max-w-2xl reveal">
+            <p className="eyebrow flex items-center gap-2 text-gold">
+              <Sparkles className="h-4 w-4" /> Werbeagentur · Itzehoe
+            </p>
+            <h1 className="mt-5 text-5xl font-medium leading-[1.02] text-navy-foreground sm:text-7xl">
+              Wir unterstützen dich in deinem <span className="text-gold">Vorhaben</span>.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Wir schaffen einen kreativen, zielgerichteten Rahmen, in dem Teams ihren gemeinsamen
-              Visionen eine neue Gestalt geben – und sie sichtbar machen.
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-foreground/85">
+              Global Triangle ist keine klassische Werbeagentur. Coaching, Grafik & Webdesign und
+              Fotografie – aus einer Hand. Mit uns startest du dein Business erfolgreich oder baust
+              es weiter aus.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <a
-                href="#angebot"
-                className="rounded-md bg-primary px-7 py-3 font-medium text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+                href="#leistungen"
+                className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3 font-medium text-accent-foreground shadow-soft transition-transform hover:-translate-y-0.5"
               >
-                Unser Angebot
+                Unsere Leistungen <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href="#kontakt"
-                className="rounded-md border border-primary/40 px-7 py-3 font-medium text-primary transition-colors hover:bg-primary/5"
+                className="rounded-full border border-navy-foreground/40 px-7 py-3 font-medium text-navy-foreground transition-colors hover:bg-navy-foreground/10"
               >
                 Kontakt aufnehmen
               </a>
@@ -195,245 +206,160 @@ function Index() {
           </div>
         </div>
         <a
-          href="#angebot"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-primary/70 transition-colors hover:text-primary"
+          href="#leistungen"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold/80 transition-colors hover:text-gold"
           aria-label="Nach unten"
         >
           <ArrowDown className="h-6 w-6 animate-bounce" />
         </a>
       </section>
 
-      {/* Intro / WAS */}
-      <section className="bg-background py-24">
+      {/* Leistungen */}
+      <section id="leistungen" className="bg-background py-24">
         <div className="mx-auto max-w-6xl px-5">
-          <div className="reveal grid gap-12 md:grid-cols-12">
-            <div className="md:col-span-5">
-              <p className="eyebrow text-primary">Was?</p>
-              <h2 className="mt-3 text-4xl font-semibold sm:text-5xl">
-                Was macht Visionsgestalten?
-              </h2>
-            </div>
-            <div className="space-y-5 text-lg leading-relaxed text-muted-foreground md:col-span-7">
-              <p>
-                Visionsgestalten arbeitet mit Beratern, Trainern, Projektmanagern, Künstlern und
-                Gestaltern als Netzwerkpartner zusammen.
-              </p>
-              <p>
-                Schwerpunkt ist die Prozessbegleitung, Moderation und das Erstellen von Konzepten zur
-                Beteiligung von Menschen – in Planung, Austausch und auf der Handlungsebene. Wir
-                bündeln alle Ressourcen einer Organisation und schaffen neue Motivation und
-                Zielrichtung im Team.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Angebot parallax band */}
-      <section id="angebot" className="relative">
-        <div
-          className="parallax absolute inset-0"
-          style={{ backgroundImage: `url(${angebotImg})` }}
-          aria-hidden
-        />
-        <div className="absolute inset-0 bg-background/82 backdrop-blur-[2px]" aria-hidden />
-        <div className="relative mx-auto max-w-6xl px-5 py-28">
           <div className="reveal mx-auto max-w-2xl text-center">
-            <p className="eyebrow text-primary">Angebot</p>
-            <h2 className="mt-3 text-4xl font-semibold sm:text-5xl">Vier Schwerpunkte</h2>
+            <p className="eyebrow text-gold">Leistungen</p>
+            <h2 className="mt-3 text-4xl font-medium sm:text-5xl">Drei Stärken, ein Team</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Von der Moderation bis zur gestalterischen Umsetzung – kreativ und zielgerichtet.
+              Von der ersten Idee bis zum sichtbaren Ergebnis begleiten wir dich – strategisch,
+              gestalterisch und im Bild.
             </p>
           </div>
-          <div className="reveal mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {ANGEBOTE.map((a) => (
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+            {LEISTUNGEN.map((l, i) => (
               <article
-                key={a.title}
-                className="group rounded-xl border border-border bg-card p-7 shadow-soft transition-all hover:-translate-y-1 hover:shadow-lift"
-              >
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <a.icon className="h-6 w-6" />
-                </span>
-                <h3 className="mt-5 text-2xl font-semibold text-card-foreground">{a.title}</h3>
-                <p className="mt-2 leading-relaxed text-muted-foreground">{a.text}</p>
-              </article>
-            ))}
-          </div>
-
-          <div className="reveal mx-auto mt-16 max-w-3xl rounded-xl border border-border bg-card/90 p-8 shadow-soft">
-            <h3 className="text-2xl font-semibold">Wir …</h3>
-            <ul className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2">
-              {WIR_TUN.map((w) => (
-                <li key={w} className="flex items-start gap-3 text-muted-foreground">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  <span>{w}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* WARUM */}
-      <section className="bg-secondary py-24">
-        <div className="mx-auto max-w-4xl px-5 text-center reveal">
-          <p className="eyebrow text-primary">Warum?</p>
-          <h2 className="mt-3 text-4xl font-semibold sm:text-5xl">
-            Sichtbare Ergebnisse halten Motivation lebendig
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            Veränderungsprozesse brauchen Sprechen, Denken und Reflexion – aber auch sichtbare,
-            mittelbare Ergebnisse. Darum stehen gemeinsames Tun und Austausch im Vordergrund.
-            Grundlage ist der Gedanke der Partizipation, des wertschätzenden Umgangs miteinander und
-            der Kreativität.
-          </p>
-        </div>
-      </section>
-
-      {/* Philosophie parallax band + values */}
-      <section id="philosophie" className="relative">
-        <div
-          className="parallax flex min-h-[60vh] items-center"
-          style={{ backgroundImage: `url(${philosophieImg})` }}
-        >
-          <div className="absolute inset-0 bg-primary/55" aria-hidden />
-          <div className="relative mx-auto max-w-4xl px-5 py-24 text-center reveal">
-            <p className="eyebrow text-primary-foreground/80">Philosophie & Leitbild</p>
-            <h2 className="mt-3 text-4xl font-semibold text-primary-foreground sm:text-6xl">
-              Beteiligung. Nachhaltig &amp; sichtbar.
-            </h2>
-            <p className="mt-6 text-lg leading-relaxed text-primary-foreground/90">
-              Durch unser interdisziplinäres – wissenschaftlich, künstlerisch und handwerkliches –
-              Leitbild gelingt es, dass Beteiligung nachhaltig umgesetzt wird.
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-background py-24">
-          <div className="mx-auto grid max-w-6xl gap-6 px-5 md:grid-cols-3">
-            {WERTE.map((w, i) => (
-              <article
-                key={w.title}
-                className="reveal rounded-xl border border-border bg-card p-8 shadow-soft"
+                key={l.title}
+                className="reveal group flex flex-col items-center rounded-2xl border border-border bg-card p-8 text-center shadow-soft transition-all hover:-translate-y-1 hover:shadow-lift"
                 style={{ transitionDelay: `${i * 90}ms` }}
               >
-                <span className="eyebrow text-primary/60">0{i + 1}</span>
-                <h3 className="mt-2 text-3xl font-semibold">{w.title}</h3>
-                <p className="mt-4 leading-relaxed text-muted-foreground">{w.text}</p>
+                <div className="relative">
+                  <img
+                    src={l.image.url}
+                    alt={l.title}
+                    className="h-28 w-28 rounded-full object-cover ring-4 ring-secondary"
+                    loading="lazy"
+                  />
+                  <span className="absolute -bottom-2 -right-2 inline-flex h-11 w-11 items-center justify-center rounded-full bg-gold text-accent-foreground shadow-soft">
+                    <l.icon className="h-5 w-5" />
+                  </span>
+                </div>
+                <h3 className="mt-7 text-2xl font-semibold">{l.title}</h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">{l.text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Persönliches */}
-      <section id="persoenliches" className="bg-secondary py-24">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 md:grid-cols-2">
-          <div className="reveal overflow-hidden rounded-2xl shadow-lift">
+      {/* Über uns */}
+      <section id="ueber-uns" className="relative overflow-hidden bg-navy py-28 text-navy-foreground">
+        <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 md:grid-cols-2">
+          <div className="reveal overflow-hidden rounded-3xl shadow-lift">
             <img
-              src={persoenlichesImg}
-              alt="Arbeitsplatz von Visionsgestalten"
-              width={1600}
-              height={1200}
-              loading="lazy"
+              src={iraImg.url}
+              alt="Ira Köhnke – Global Triangle"
               className="h-full w-full object-cover"
+              loading="lazy"
             />
           </div>
           <div className="reveal">
-            <p className="eyebrow text-primary">Persönliches & Partner</p>
-            <h2 className="mt-3 text-4xl font-semibold sm:text-5xl">Laura van Joolen</h2>
-            <p className="mt-1 text-lg text-muted-foreground">Dipl. Kult. Wiss.</p>
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              Hinter Visionsgestalten steht die Verbindung von Wissenschaft, Kunst und Handwerk.
-              Mit Ansätzen aus Theater, Kunst und Wissenschaft sowie systemischen Methoden aus
-              Erlebnispädagogik, Teamentwicklung und NLP entstehen kreative Beteiligungsprozesse.
+            <p className="eyebrow text-gold">Über uns</p>
+            <h2 className="mt-3 text-4xl font-medium leading-tight sm:text-5xl">
+              Mehr als eine klassische Werbeagentur
+            </h2>
+            <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-foreground/85">
+              <p>
+                Du kannst von uns alle Dienste einer klassischen Werbeagentur erhalten – doch wir
+                sind mehr. Mit uns kannst du dein Business erfolgreich starten oder, wenn du bereits
+                ein Unternehmen hast, es erfolgreich ausbauen.
+              </p>
+              <p>
+                Du wünschst dir jemanden, der dich begleitet und dir zeigt, welche Schritte nötig
+                sind, um erfolgreich zu starten oder noch erfolgreicher zu sein? Genau dafür sind wir
+                da.
+              </p>
+            </div>
+            <figure className="mt-9 border-l-2 border-gold pl-6">
+              <Quote className="h-6 w-6 text-gold" />
+              <blockquote className="mt-3 font-display text-2xl italic leading-snug sm:text-3xl">
+                Eine Idee ist nur eine Idee. Wann und wie du sie angehst, bestimmt, was daraus wird.
+              </blockquote>
+              <figcaption className="mt-3 eyebrow text-navy-foreground/70">— Mark Twain</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section id="team" className="bg-secondary py-24">
+        <div className="mx-auto max-w-6xl px-5">
+          <div className="reveal mx-auto max-w-2xl text-center">
+            <p className="eyebrow text-gold">Team</p>
+            <h2 className="mt-3 text-4xl font-medium sm:text-5xl">Wir sind Ira, Eyke und Tonja</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              In einem individuellen, kostenfreien Analyse-Gespräch klären wir gemeinsam, wie wir dir
+              weiterhelfen und welche Schritte notwendig sind.
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              In Kooperation mit einem professionellen Netzwerk aus Künstlern, Trainern und
-              Gestaltern werden gemeinsame Visionen sichtbar gemacht.
-            </p>
+          </div>
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+            {TEAM.map((m, i) => (
+              <article
+                key={m.name}
+                className="reveal overflow-hidden rounded-2xl bg-card shadow-soft transition-all hover:-translate-y-1 hover:shadow-lift"
+                style={{ transitionDelay: `${i * 90}ms` }}
+              >
+                <div className="aspect-[4/5] overflow-hidden">
+                  <img
+                    src={m.image.url}
+                    alt={m.name}
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-7">
+                  <p className="eyebrow text-gold">{m.role}</p>
+                  <h3 className="mt-2 text-2xl font-semibold">{m.name}</h3>
+                  <p className="mt-3 leading-relaxed text-muted-foreground">{m.text}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Kontakt */}
       <section id="kontakt" className="bg-background py-24">
-        <div className="mx-auto max-w-6xl px-5">
-          <div className="reveal grid gap-12 md:grid-cols-2">
-            <div>
-              <p className="eyebrow text-primary">Kontakt</p>
-              <h2 className="mt-3 text-4xl font-semibold sm:text-5xl">
-                Lass uns deine Vision gestalten
-              </h2>
-              <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground">
-                Du möchtest einen Prozess begleiten lassen, einen Workshop moderieren oder ein
-                Beteiligungsvorhaben starten? Schreib uns – wir freuen uns auf dein Projekt.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border bg-card p-8 shadow-soft">
-              <ul className="space-y-5">
-                <ContactRow icon={Mail} label="E-Mail">
-                  <a className="hover:text-primary" href="mailto:vanjoolen@visionsgestalten.de">
-                    vanjoolen@visionsgestalten.de
-                  </a>
-                </ContactRow>
-                <ContactRow icon={Phone} label="Telefon">
-                  <a className="hover:text-primary" href="tel:+4951160769774">
-                    0511. 60 76 97 74
-                  </a>
-                </ContactRow>
-                <ContactRow icon={Smartphone} label="Mobil">
-                  <a className="hover:text-primary" href="tel:+4917320930060">
-                    0173. 20 93 060
-                  </a>
-                </ContactRow>
-                <ContactRow icon={MapPin} label="Adresse">
-                  Visionsgestalten<br />Plaza de Rosalia 7<br />30449 Hannover
-                </ContactRow>
-                <ContactRow icon={Globe} label="Web">
-                  www.visionsgestalten.de
-                </ContactRow>
-              </ul>
-            </div>
+        <div className="mx-auto max-w-4xl px-5 text-center reveal">
+          <p className="eyebrow text-gold">Kontakt</p>
+          <h2 className="mt-3 text-4xl font-medium sm:text-5xl">Lass uns dein Vorhaben angehen</h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            Wir agieren seit Jahren erfolgreich im Webdesign, der Fotografie und im Coaching –
+            regional und national. Wir arbeiten pragmatisch und lösungsorientiert und sind allem
+            aufgeschlossen. Melde dich für ein kostenfreies Analyse-Gespräch.
+          </p>
+          <div className="mt-9 flex flex-wrap justify-center gap-4">
+            <a
+              href="mailto:info@global-triangle.de"
+              className="inline-flex items-center gap-2 rounded-full bg-navy px-8 py-3 font-medium text-navy-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+            >
+              Jetzt Kontakt aufnehmen <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Footer / Impressum */}
-      <footer className="border-t border-border bg-secondary py-12">
+      {/* Footer */}
+      <footer className="border-t border-border bg-navy py-12 text-navy-foreground">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-5 text-center">
-          <img src={logo.url} alt="Vision & Gestalten" className="h-9 w-auto" />
-          <p className="text-sm text-muted-foreground">
-            Visionsgestalten · Laura van Joolen · Plaza de Rosalia 7 · 30449 Hannover
+          <Logo className="text-navy-foreground" />
+          <p className="text-sm text-navy-foreground/70">
+            Global Triangle · Coaching, Grafik & Webdesign und Fotografie · Itzehoe
           </p>
-          <p className="text-xs text-muted-foreground/70">
-            © {new Date().getFullYear()} Visionsgestalten – Kreative Organisationsentwicklung.
-            Alle Rechte vorbehalten.
+          <p className="text-xs text-navy-foreground/50">
+            © {new Date().getFullYear()} Global Triangle. Alle Rechte vorbehalten.
           </p>
         </div>
       </footer>
     </div>
-  );
-}
-
-function ContactRow({
-  icon: Icon,
-  label,
-  children,
-}: {
-  icon: typeof Mail;
-  label: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <li className="flex items-start gap-4">
-      <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-        <Icon className="h-5 w-5" />
-      </span>
-      <div>
-        <p className="eyebrow text-[0.65rem] text-muted-foreground/70">{label}</p>
-        <p className="text-base leading-snug text-card-foreground">{children}</p>
-      </div>
-    </li>
   );
 }
