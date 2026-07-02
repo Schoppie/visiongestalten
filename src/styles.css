@@ -5,9 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Vision & Gestalten — design system
- * Light, warm, modern. Bordeaux + warm greys, condensed display type.
- * All colors in oklch. Use semantic tokens only in components.
+ * Global Triangle — design system
+ * Modern, deep navy with luminous gold accents. Editorial and airy.
  */
 
 @theme inline {
@@ -36,47 +35,53 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-ring-offset-background: var(--background);
+  --color-navy: var(--navy);
+  --color-navy-foreground: var(--navy-foreground);
+  --color-gold: var(--gold);
 
-  --font-display: "Saira Condensed", "Oswald", sans-serif;
-  --font-body: "Karla", system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Jost", system-ui, sans-serif;
 
-  --shadow-soft: 0 1px 2px oklch(0.35 0.12 20 / 0.04), 0 12px 30px -12px oklch(0.35 0.12 20 / 0.12);
-  --shadow-lift: 0 30px 60px -25px oklch(0.35 0.12 20 / 0.28);
+  --shadow-soft: 0 1px 2px oklch(0.2 0.06 265 / 0.06), 0 18px 40px -18px oklch(0.2 0.06 265 / 0.18);
+  --shadow-lift: 0 34px 70px -28px oklch(0.2 0.06 265 / 0.35);
 }
 
 :root {
-  --radius: 0.5rem;
+  --radius: 0.75rem;
 
-  /* Warm paper light theme */
-  --background: oklch(0.985 0.006 70);
-  --foreground: oklch(0.245 0.02 25);
+  --background: oklch(0.99 0.004 260);
+  --foreground: oklch(0.24 0.03 265);
 
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.245 0.02 25);
+  --card-foreground: oklch(0.24 0.03 265);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.245 0.02 25);
+  --popover-foreground: oklch(0.24 0.03 265);
 
-  /* Bordeaux */
-  --primary: oklch(0.41 0.13 22);
-  --primary-foreground: oklch(0.985 0.006 70);
+  /* Deep navy */
+  --navy: oklch(0.28 0.09 268);
+  --navy-foreground: oklch(0.97 0.01 260);
 
-  /* Warm grey */
-  --secondary: oklch(0.93 0.008 50);
-  --secondary-foreground: oklch(0.30 0.02 25);
+  /* Gold accent */
+  --gold: oklch(0.78 0.12 85);
 
-  --muted: oklch(0.945 0.006 60);
-  --muted-foreground: oklch(0.52 0.015 35);
+  --primary: oklch(0.28 0.09 268);
+  --primary-foreground: oklch(0.97 0.01 260);
 
-  --accent: oklch(0.88 0.02 45);
-  --accent-foreground: oklch(0.30 0.04 22);
+  --secondary: oklch(0.95 0.01 260);
+  --secondary-foreground: oklch(0.3 0.04 265);
+
+  --muted: oklch(0.96 0.008 260);
+  --muted-foreground: oklch(0.5 0.02 265);
+
+  --accent: oklch(0.78 0.12 85);
+  --accent-foreground: oklch(0.26 0.06 90);
 
   --destructive: oklch(0.55 0.2 27);
-  --destructive-foreground: oklch(0.985 0.006 70);
+  --destructive-foreground: oklch(0.99 0.004 260);
 
-  --border: oklch(0.9 0.008 55);
-  --input: oklch(0.9 0.008 55);
-  --ring: oklch(0.41 0.13 22);
+  --border: oklch(0.91 0.01 260);
+  --input: oklch(0.91 0.01 260);
+  --ring: oklch(0.78 0.12 85);
 }
 
 @layer base {
@@ -98,11 +103,10 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: 0.01em;
+    letter-spacing: 0.005em;
   }
 }
 
-/* Parallax fixed-attachment bands */
 @utility parallax {
   background-size: cover;
   background-position: center;
@@ -110,7 +114,6 @@
   background-attachment: fixed;
 }
 
-/* Scroll reveal */
 @utility reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -124,14 +127,13 @@
 }
 
 @utility eyebrow {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   text-transform: uppercase;
   letter-spacing: 0.32em;
-  font-weight: 600;
-  font-size: 0.78rem;
+  font-weight: 500;
+  font-size: 0.72rem;
 }
 
-/* Disable fixed attachment on touch devices (jank) */
 @media (max-width: 768px) {
   .parallax {
     background-attachment: scroll;
