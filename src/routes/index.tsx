@@ -13,13 +13,21 @@ import {
 } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 
-import hero from "@/assets/gt/hero.jpg.asset.json";
-import iraRound from "@/assets/gt/ira_round.png.asset.json";
-import eykeRound from "@/assets/gt/eyke_round.png.asset.json";
-import tonjaRound from "@/assets/gt/tonja_round.png.asset.json";
-import iraImg from "@/assets/gt/ira.jpg.asset.json";
-import eykeImg from "@/assets/gt/eyke.jpg.asset.json";
-import tonjaImg from "@/assets/gt/tonja.jpg.asset.json";
+import heroUrl from "@/assets/gt/hero.jpg";
+import iraRoundUrl from "@/assets/gt/ira_round.png";
+import eykeRoundUrl from "@/assets/gt/eyke_round.png";
+import tonjaRoundUrl from "@/assets/gt/tonja_round.png";
+import iraImgUrl from "@/assets/gt/ira.jpg";
+import eykeImgUrl from "@/assets/gt/eyke.jpg";
+import tonjaImgUrl from "@/assets/gt/tonja.jpg";
+
+const hero = { url: heroUrl };
+const iraRound = { url: iraRoundUrl };
+const eykeRound = { url: eykeRoundUrl };
+const tonjaRound = { url: tonjaRoundUrl };
+const iraImg = { url: iraImgUrl };
+const eykeImg = { url: eykeImgUrl };
+const tonjaImg = { url: tonjaImgUrl };
 
 export const Route = createFileRoute("/")({
   head: () => ({
