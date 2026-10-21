@@ -2,6 +2,7 @@
 import iraImgUrl from "@/assets/gt/ira.jpg";
 import eykeImgUrl from "@/assets/gt/eyke-hd.jpg";
 import tonjaImgUrl from "@/assets/gt/tonja.jpg";
+import { breadcrumbJsonLd, pageHead, serviceJsonLd } from "@/content/seo";
 
 export interface ServiceContent {
   slug: "/business-coaching" | "/grafik-webdesign-itzehoe" | "/fotografie";
@@ -172,14 +173,16 @@ export function getService(slug: ServiceContent["slug"]) {
 }
 
 export function serviceHead(s: ServiceContent) {
-  return {
-    meta: [
-      { title: s.metaTitle },
-      { name: "description", content: s.metaDescription },
-      { property: "og:title", content: s.metaTitle },
-      { property: "og:description", content: s.metaDescription },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+  return pageHead({
+    path: s.slug,
+    title: s.metaTitle,
+    description: s.metaDescription,
+    jsonLd: [
+      serviceJsonLd(s.eyebrow, s.metaDescription, s.slug),
+      breadcrumbJsonLd([
+        { name: "Start", path: "/" },
+        { name: s.title, path: s.slug },
+      ]),
     ],
-  };
+  });
 }
