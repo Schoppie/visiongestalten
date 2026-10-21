@@ -8,3 +8,9 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Project rules
+- All images and videos live as real files under `src/assets/` (no CDN `.asset.json` pointers) — the site is exported via GitHub and hosted on Vercel, where Lovable CDN URLs do not resolve.
+- The contact form inserts directly from the browser with the publishable key (anon INSERT-only RLS policy) — server functions need server env vars that are unavailable on Vercel.
+- Subpages keep the old WordPress URLs (/business-coaching, /grafik-webdesign-itzehoe, /fotografie, /referenzen, /impressum, /datenschutzerklaerung) so existing search links keep working.
+- Shared header/footer/contact data live in `src/components/site-layout.tsx` and `src/content/` — page texts are edited there, not inline in routes.
