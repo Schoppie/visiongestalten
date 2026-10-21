@@ -20,6 +20,15 @@ export function businessJsonLd() {
     url: `${SITE_URL}/`,
     telephone: "+49 151 17805363",
     hasMap: GOOGLE_MAPS_URL,
+    // Same opening hours as the Google business profile.
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "08:00",
+        closes: "18:00",
+      },
+    ],
     email: CONTACT.email,
     address: {
       "@type": "PostalAddress",
