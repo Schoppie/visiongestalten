@@ -20,6 +20,7 @@ import { ContactForm } from "@/components/contact-form";
 import { CONTACT } from "@/content/site";
 
 import heroVideoUrl from "@/assets/gt/hero.mp4";
+import heroWebmUrl from "@/assets/gt/hero.webm";
 import heroPosterUrl from "@/assets/gt/hero-poster.jpg";
 import iraRoundUrl from "@/assets/gt/ira_round.png";
 import eykeRoundUrl from "@/assets/gt/eyke_round.png";
@@ -199,14 +200,16 @@ function Index() {
         <div ref={heroMedia} className="absolute inset-0 will-change-transform" aria-hidden>
           <video
             className="h-full w-full object-cover motion-reduce:hidden"
-            src={heroVideoUrl}
             poster={heroPosterUrl}
             autoPlay
             muted
             loop
             playsInline
             preload="auto"
-          />
+          >
+            <source src={heroWebmUrl} type="video/webm" />
+            <source src={heroVideoUrl} type="video/mp4" />
+          </video>
           <img src={heroPosterUrl} alt="" className="hidden h-full w-full object-cover motion-reduce:block" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-br from-navy/85 via-navy/60 to-navy/85" aria-hidden />
