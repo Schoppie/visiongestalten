@@ -16,7 +16,7 @@ import {
   Star,
 } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
-import { Logo, SiteFooter } from "@/components/site-layout";
+import { Brand, Logo, SiteFooter } from "@/components/site-layout";
 import { ContactForm } from "@/components/contact-form";
 import { CONTACT } from "@/content/site";
 import { businessJsonLd, pageHead, GOOGLE_REVIEW_URL } from "@/content/seo";
@@ -30,6 +30,9 @@ import tonjaRoundUrl from "@/assets/gt/tonja_round.png";
 import iraImgUrl from "@/assets/gt/ira.jpg";
 import eykeImgUrl from "@/assets/gt/eyke-hd.jpg";
 import tonjaImgUrl from "@/assets/gt/tonja.jpg";
+
+// Slows the whole butterfly video (front and back butterflies).
+const HERO_PLAYBACK_RATE = 0.55;
 
 const iraRound = { url: iraRoundUrl };
 const eykeRound = { url: eykeRoundUrl };
@@ -194,6 +197,15 @@ function Index() {
       <section id="start" className="relative flex min-h-screen items-center overflow-hidden">
         <div ref={heroMedia} className="absolute inset-0 will-change-transform" aria-hidden>
           <video
+            ref={(v) => {
+              if (v) v.playbackRate = HERO_PLAYBACK_RATE;
+            }}
+            onLoadedMetadata={(e) => {
+              e.currentTarget.playbackRate = HERO_PLAYBACK_RATE;
+            }}
+            onPlay={(e) => {
+              e.currentTarget.playbackRate = HERO_PLAYBACK_RATE;
+            }}
             className="h-full w-full object-cover motion-reduce:hidden"
             poster={heroPosterUrl}
             autoPlay
@@ -219,7 +231,7 @@ function Index() {
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-foreground/85">
-              Global Triangle ist keine klassische Werbeagentur. Business Coaching, Grafik &
+              <Brand /> ist keine klassische Werbeagentur. Business Coaching, Grafik &
               Webdesign und Fotografie in Itzehoe – aus einer Hand. Mit uns startest du dein
               Business erfolgreich oder baust es weiter aus.
             </p>

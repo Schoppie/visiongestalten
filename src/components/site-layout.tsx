@@ -3,9 +3,26 @@ import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import { CONTACT, SERVICE_LINKS } from "@/content/site";
 
+const BRAND = "Global Triangle";
+
+/** Brand name that browser translators (e.g. Google Translate) must never translate. */
+export function Brand() {
+  return (
+    <span translate="no" className="notranslate">
+      {BRAND}
+    </span>
+  );
+}
+
+/** Renders text with every "Global Triangle" protected from browser translation. */
+export function withBrand(text: string): ReactNode {
+  if (!text.includes(BRAND)) return text;
+  return text.split(BRAND).flatMap((part, i) => (i === 0 ? [part] : [<Brand key={i} />, part]));
+}
+
 export function Logo({ className = "" }: { className?: string }) {
   return (
-    <span className={`flex items-center gap-3 ${className}`}>
+    <span translate="no" className={`notranslate flex items-center gap-3 ${className}`}>
       <svg viewBox="0 0 40 36" className="h-9 w-auto" aria-hidden>
         <polygon
           points="20,3 37,33 3,33"
@@ -107,7 +124,9 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <p className="eyebrow text-gold">Global Triangle</p>
+          <p className="eyebrow text-gold">
+            <Brand />
+          </p>
           <ul className="mt-4 space-y-2.5">
             <li>
               <Link to="/referenzen" className={linkCls}>Referenzen</Link>
@@ -151,7 +170,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="mx-auto mt-12 flex max-w-6xl flex-col items-center justify-between gap-3 border-t border-navy-foreground/15 px-5 pt-6 text-xs text-navy-foreground/55 sm:flex-row">
-        <p>© {new Date().getFullYear()} Global Triangle. Alle Rechte vorbehalten.</p>
+        <p>© {new Date().getFullYear()} <Brand />. Alle Rechte vorbehalten.</p>
         <p className="flex gap-5">
           <Link to="/impressum" className="hover:text-gold">Impressum</Link>
           <Link to="/datenschutzerklaerung" className="hover:text-gold">Datenschutz</Link>

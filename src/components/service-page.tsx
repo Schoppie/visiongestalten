@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, ExternalLink, Phone, Quote } from "lucide-react";
-import { SubpageShell } from "@/components/site-layout";
+import { SubpageShell, withBrand } from "@/components/site-layout";
 import { useReveal } from "@/hooks/use-reveal";
 import { CONTACT } from "@/content/site";
 import { SERVICES, type ServiceContent } from "@/content/services";
@@ -21,7 +21,7 @@ export function ServicePage({ service: s }: { service: ServiceContent }) {
             </h1>
             <div className="mt-6 max-w-2xl space-y-4 text-lg leading-relaxed text-navy-foreground/85">
               {s.intro.map((p) => (
-                <p key={p}>{p}</p>
+                <p key={p}>{withBrand(p)}</p>
               ))}
             </div>
             <div className="mt-9 flex flex-wrap gap-4">
@@ -63,7 +63,7 @@ export function ServicePage({ service: s }: { service: ServiceContent }) {
             <h2 className="text-4xl font-medium sm:text-5xl">{s.bodyTitle}</h2>
             <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
               {s.body.map((p) => (
-                <p key={p}>{p}</p>
+                <p key={p}>{withBrand(p)}</p>
               ))}
             </div>
             {s.quote && (
@@ -139,7 +139,7 @@ export function ServicePage({ service: s }: { service: ServiceContent }) {
             <h2 className="mt-3 text-4xl font-medium sm:text-5xl">{s.about.title}</h2>
             <div className="mt-8 grid gap-5 text-lg leading-relaxed text-muted-foreground sm:grid-cols-2 sm:gap-x-10">
               {s.about.paragraphs.map((p) => (
-                <p key={p}>{p}</p>
+                <p key={p}>{withBrand(p)}</p>
               ))}
             </div>
           </div>
@@ -153,7 +153,7 @@ export function ServicePage({ service: s }: { service: ServiceContent }) {
             <div className="max-w-2xl">
               <p className="eyebrow text-gold">Referenzen</p>
               <h2 className="mt-3 text-4xl font-medium sm:text-5xl">Gemeinsam erfolgreich</h2>
-              {s.references && <p className="mt-4 text-lg text-muted-foreground">{s.references.intro}</p>}
+              {s.references && <p className="mt-4 text-lg text-muted-foreground">{withBrand(s.references.intro)}</p>}
             </div>
             <Link
               to="/referenzen"

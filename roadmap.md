@@ -12,3 +12,4 @@
 - [x] Website mit bestehendem Google-Unternehmensprofil verknüpfen
 - [x] Search Console (bereits angemeldet) prüfen und Sitemap einreichen
 - [ ] Galerie-Seite – wartet auf die Originalfotos (im Webarchiv nicht gesichert)
+- [x] Schmetterlinge im Header-Video langsamer abspielen
