@@ -28,11 +28,11 @@ export interface ServiceContent {
 export const SERVICES: ServiceContent[] = [
   {
     slug: "/business-coaching",
-    eyebrow: "Coaching & Mentoring in Itzehoe",
+    eyebrow: "Business Coaching in Itzehoe",
     title: "Coaching & Mentoring",
-    metaTitle: "Business-Coaching & Mentoring in Itzehoe – Ira Köhnke | Global Triangle",
+    metaTitle: "Business Coaching Itzehoe – Ira Köhnke | Global Triangle",
     metaDescription:
-      "Business-Coaching, Einzel-, Gruppen- und Online-Coaching mit Ira Köhnke in Itzehoe: Karriere, Kommunikation, Strategie und Stressbewältigung.",
+      "Business Coaching in Itzehoe mit Ira Köhnke: Einzel-, Gruppen- und Online-Coaching zu Karriere, Kommunikation, Strategie und Stressbewältigung. Jetzt Kontakt aufnehmen.",
     intro: [
       "Ich helfe dir dabei, die Entwicklung deines Unternehmens nicht nur zu verbessern, sondern es auch nachhaltig zu unterstützen.",
       "Dabei bin ich dein Kompass für all die wichtigen Aufgaben, die du mit deiner Firma in Zukunft verfolgen möchtest.",
