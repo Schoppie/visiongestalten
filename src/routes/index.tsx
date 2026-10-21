@@ -31,8 +31,8 @@ import iraImgUrl from "@/assets/gt/ira.jpg";
 import eykeImgUrl from "@/assets/gt/eyke-hd.jpg";
 import tonjaImgUrl from "@/assets/gt/tonja.jpg";
 
-// Slows the whole butterfly video (front and back butterflies).
-const HERO_PLAYBACK_RATE = 0.55;
+// The video file itself is already slowed down (2.5x, with smooth in-between frames).
+const HERO_PLAYBACK_RATE = 1;
 
 const iraRound = { url: iraRoundUrl };
 const eykeRound = { url: eykeRoundUrl };
