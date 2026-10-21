@@ -1,22 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageIntro, SubpageShell } from "@/components/site-layout";
 import { CONTACT } from "@/content/site";
+import { pageHead } from "@/content/seo";
 
 const TITLE = "Impressum – Global Triangle Itzehoe";
 const DESCRIPTION = "Impressum von Global Triangle, Trotzenburger Str. 35, 25524 Itzehoe – Anbieterkennzeichnung und Kontakt.";
 
 export const Route = createFileRoute("/impressum")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "robots", content: "noindex, follow" },
-    ],
-  }),
+  head: () => pageHead({ path: "/impressum", title: TITLE, description: DESCRIPTION, noindex: true }),
   component: ImpressumPage,
 });
 

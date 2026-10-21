@@ -14,3 +14,4 @@
 - The contact form inserts directly from the browser with the publishable key (anon INSERT-only RLS policy) — server functions need server env vars that are unavailable on Vercel.
 - Subpages keep the old WordPress URLs (/business-coaching, /grafik-webdesign-itzehoe, /fotografie, /referenzen, /impressum, /datenschutzerklaerung) so existing search links keep working.
 - Shared header/footer/contact data live in `src/components/site-layout.tsx` and `src/content/` — page texts are edited there, not inline in routes.
+- Every route builds its head via `pageHead()` in `src/content/seo.ts` (canonical + og:url from `SITE_URL`, JSON-LD business/service/breadcrumb) — keeps search metadata consistent and points at the real domain, not the Lovable URL.

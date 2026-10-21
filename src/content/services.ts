@@ -2,6 +2,7 @@
 import iraImgUrl from "@/assets/gt/ira.jpg";
 import eykeImgUrl from "@/assets/gt/eyke-hd.jpg";
 import tonjaImgUrl from "@/assets/gt/tonja.jpg";
+import { breadcrumbJsonLd, pageHead, serviceJsonLd } from "@/content/seo";
 
 export interface ServiceContent {
   slug: "/business-coaching" | "/grafik-webdesign-itzehoe" | "/fotografie";
@@ -28,11 +29,11 @@ export interface ServiceContent {
 export const SERVICES: ServiceContent[] = [
   {
     slug: "/business-coaching",
-    eyebrow: "Coaching & Mentoring in Itzehoe",
+    eyebrow: "Business Coaching in Itzehoe",
     title: "Coaching & Mentoring",
-    metaTitle: "Business-Coaching & Mentoring in Itzehoe – Ira Köhnke | Global Triangle",
+    metaTitle: "Business Coaching Itzehoe – Ira Köhnke | Global Triangle",
     metaDescription:
-      "Business-Coaching, Einzel-, Gruppen- und Online-Coaching mit Ira Köhnke in Itzehoe: Karriere, Kommunikation, Strategie und Stressbewältigung.",
+      "Business Coaching in Itzehoe mit Ira Köhnke: Einzel-, Gruppen- und Online-Coaching zu Karriere, Kommunikation, Strategie und Stressbewältigung. Jetzt Kontakt aufnehmen.",
     intro: [
       "Ich helfe dir dabei, die Entwicklung deines Unternehmens nicht nur zu verbessern, sondern es auch nachhaltig zu unterstützen.",
       "Dabei bin ich dein Kompass für all die wichtigen Aufgaben, die du mit deiner Firma in Zukunft verfolgen möchtest.",
@@ -94,11 +95,11 @@ export const SERVICES: ServiceContent[] = [
   },
   {
     slug: "/grafik-webdesign-itzehoe",
-    eyebrow: "Grafikdesign & Webdesign in Itzehoe",
+    eyebrow: "Webdesign & Grafikdesign in Itzehoe",
     title: "Grafik & Webdesign",
-    metaTitle: "Grafik & Webdesign in Itzehoe – Eyke Szopieray | Global Triangle",
+    metaTitle: "Webdesign Itzehoe – Homepage, Logo & Flyer | Global Triangle",
     metaDescription:
-      "Logo, Visitenkarten, Flyer, Homepage und Außenwerbung aus einer Hand: Grafik & Webdesign von Eyke Szopieray in Itzehoe.",
+      "Webdesign und Grafikdesign in Itzehoe: Eyke Szopieray erstellt deine Homepage, dein Logo, Visitenkarten, Flyer und Außenwerbung – alles aus einer Hand.",
     intro: [
       "Du erhältst Visitenkarten, Flyer und eine neue Homepage, natürlich auch gerne ein Logo, Außenwerbung, Autobeschriftung, Fahnen, T-Shirts und das ganze Repertoire, wie du es dir wünscht.",
       "Ich fühle mich in deine Ideen für das Branding ein und stelle alles zusammen.",
@@ -138,15 +139,15 @@ export const SERVICES: ServiceContent[] = [
     slug: "/fotografie",
     eyebrow: "Fotografie in Itzehoe und Umgebung",
     title: "Fotografie",
-    metaTitle: "Business-Fotografie in Itzehoe – Tonja Fritz-Johnson | Global Triangle",
+    metaTitle: "Fotografin Itzehoe – Business-Fotos & Portraits | Global Triangle",
     metaDescription:
-      "Portraits, Teamfotos und Imageaufnahmen für Website, Social Media und Print: authentische Business-Fotografie von Tonja Fritz-Johnson.",
+      "Business-Fotografie in Itzehoe: Portraits, Headshots, Teamfotos und Imageaufnahmen für Website, Social Media und Print – authentisch fotografiert von Tonja Fritz-Johnson.",
     intro: [
       "Deine Bilder sind mehr als nur Fotos – sie sind das Aushängeschild deines Unternehmens. Mein Ziel ist es, dein Image authentisch widerzuspiegeln und genau die Kunden anzulocken, die zu dir passen.",
       "Deshalb biete ich professionelle, branchenübergreifende Fotografie in Itzehoe und Umgebung an, die dich und dein Business optimal in Szene setzt.",
     ],
     image: tonjaImgUrl,
-    imageAlt: "Tonja Fritz-Johnson – Fotografie",
+    imageAlt: "Tonja Fritz-Johnson – Fotografin für Business-Fotos in Itzehoe",
     person: { name: "Tonja Fritz-Johnson", role: "Fotografie" },
     highlightsTitle: "Ob für Website, Social Media oder Print",
     highlights: ["Portraits & Headshots", "Teamfotos", "Imageaufnahmen", "Vielseitig einsetzbare Bildserien"],
@@ -172,14 +173,16 @@ export function getService(slug: ServiceContent["slug"]) {
 }
 
 export function serviceHead(s: ServiceContent) {
-  return {
-    meta: [
-      { title: s.metaTitle },
-      { name: "description", content: s.metaDescription },
-      { property: "og:title", content: s.metaTitle },
-      { property: "og:description", content: s.metaDescription },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+  return pageHead({
+    path: s.slug,
+    title: s.metaTitle,
+    description: s.metaDescription,
+    jsonLd: [
+      serviceJsonLd(s.eyebrow, s.metaDescription, s.slug),
+      breadcrumbJsonLd([
+        { name: "Start", path: "/" },
+        { name: s.title, path: s.slug },
+      ]),
     ],
-  };
+  });
 }

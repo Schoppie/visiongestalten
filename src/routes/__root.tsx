@@ -92,6 +92,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Coaching, Grafik & Webdesign und Fotografie aus einer Hand – wir unterstützen dich in deinem Vorhaben.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Global Triangle" },
+      { property: "og:locale", content: "de_DE" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [

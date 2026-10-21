@@ -18,6 +18,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import { Logo, SiteFooter } from "@/components/site-layout";
 import { ContactForm } from "@/components/contact-form";
 import { CONTACT } from "@/content/site";
+import { businessJsonLd, pageHead } from "@/content/seo";
 
 import heroVideoUrl from "@/assets/gt/hero.mp4";
 import heroWebmUrl from "@/assets/gt/hero.webm";
@@ -37,24 +38,14 @@ const eykeImg = { url: eykeImgUrl };
 const tonjaImg = { url: tonjaImgUrl };
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Global Triangle – Coaching, Grafik & Fotografie in Itzehoe" },
-      {
-        name: "description",
-        content:
-          "Global Triangle in Itzehoe: Business-Coaching, Grafik & Webdesign und Fotografie aus einer Hand. Ira, Eyke und Tonja begleiten dich bei Start und Wachstum.",
-      },
-      { property: "og:title", content: "Global Triangle – Coaching, Grafik & Fotografie in Itzehoe" },
-      {
-        property: "og:description",
-        content:
-          "Coaching, Grafik & Webdesign und Fotografie aus einer Hand – wir unterstützen dich in deinem Vorhaben.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      path: "/",
+      title: "Werbeagentur Itzehoe – Webdesign, Coaching & Fotografie | Global Triangle",
+      description:
+        "Global Triangle ist deine Werbeagentur in Itzehoe: Webdesign & Grafik, Business Coaching und Fotografie aus einer Hand – für Gründer und Unternehmen im Kreis Steinburg.",
+      jsonLd: [businessJsonLd()],
+    }),
   component: Index,
 });
 
@@ -73,6 +64,7 @@ const LEISTUNGEN = [
     to: "/business-coaching" as const,
     image: iraRound,
     title: "Coaching & Mentoring",
+    alt: "Ira Köhnke – Business Coaching in Itzehoe",
     text: "Als bewährte Business-Coachin erstelle ich individuelle Lösungskonzepte für Firmen und Privatpersonen in Itzehoe und Umgebung. Ich unterstütze deine Ziele im Workout mit meinem umfassenden Coachingwissen.",
   },
   {
@@ -80,6 +72,7 @@ const LEISTUNGEN = [
     to: "/grafik-webdesign-itzehoe" as const,
     image: eykeRound,
     title: "Grafik & Webdesign",
+    alt: "Eyke Szopieray – Webdesign und Grafikdesign in Itzehoe",
     text: "Als gelernte Schriftsetzerin und Marketingmanagerin in einer IT-Firma und Freelancerin fehlt mir das Potenzial für Langeweile. Mein Kopf ist voller Ideen und ich liebe es, kreativ zu sein.",
   },
   {
@@ -87,6 +80,7 @@ const LEISTUNGEN = [
     to: "/fotografie" as const,
     image: tonjaRound,
     title: "Fotografie",
+    alt: "Tonja Fritz-Johnson – Business-Fotografie in Itzehoe",
     text: "Deine Bilder sollen dein Image reflektieren und für dich die richtigen Kunden anziehen. Ich arbeite mit dir und dem Design-Team und setze mich persönlich für deinen Erfolg ein – du sollst authentisch wirken.",
   },
 ];
@@ -215,16 +209,18 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-br from-navy/85 via-navy/60 to-navy/85" aria-hidden />
         <div className="relative mx-auto w-full max-w-6xl px-5 pt-24">
           <div className="max-w-2xl reveal">
-            <p className="eyebrow flex items-center gap-2 text-gold">
-              <Sparkles className="h-4 w-4" /> Werbeagentur · Itzehoe
-            </p>
-            <h1 className="mt-5 text-5xl font-medium leading-[1.02] text-navy-foreground sm:text-7xl">
-              Wir unterstützen dich in deinem <span className="text-gold">Vorhaben</span>.
+            <h1>
+              <span className="eyebrow flex items-center gap-2 text-gold">
+                <Sparkles className="h-4 w-4" aria-hidden /> Werbeagentur in Itzehoe
+              </span>
+              <span className="mt-5 block text-5xl font-medium leading-[1.02] text-navy-foreground sm:text-7xl">
+                Wir unterstützen dich in deinem <span className="text-gold">Vorhaben</span>.
+              </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-foreground/85">
-              Global Triangle ist keine klassische Werbeagentur. Coaching, Grafik & Webdesign und
-              Fotografie – aus einer Hand. Mit uns startest du dein Business erfolgreich oder baust
-              es weiter aus.
+              Global Triangle ist keine klassische Werbeagentur. Business Coaching, Grafik &
+              Webdesign und Fotografie in Itzehoe – aus einer Hand. Mit uns startest du dein
+              Business erfolgreich oder baust es weiter aus.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <a
@@ -274,7 +270,7 @@ function Index() {
                 <div className="relative">
                   <img
                     src={l.image.url}
-                    alt={l.title}
+                    alt={l.alt}
                     className="h-28 w-28 rounded-full object-cover ring-4 ring-secondary"
                     loading="lazy"
                   />
@@ -300,7 +296,7 @@ function Index() {
           <div className="reveal overflow-hidden rounded-3xl shadow-lift">
             <img
               src={iraImg.url}
-              alt="Ira Köhnke – Global Triangle"
+              alt="Ira Köhnke von Global Triangle – Werbeagentur und Business Coaching in Itzehoe"
               className="h-full w-full object-cover"
               loading="lazy"
             />
@@ -354,7 +350,7 @@ function Index() {
                 <div className="aspect-[4/5] overflow-hidden">
                   <img
                     src={m.image.url}
-                    alt={m.name}
+                    alt={`${m.name} – ${m.role} bei Global Triangle in Itzehoe`}
                     className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                     loading="lazy"
                   />
