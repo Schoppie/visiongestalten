@@ -31,6 +31,9 @@ import iraImgUrl from "@/assets/gt/ira.jpg";
 import eykeImgUrl from "@/assets/gt/eyke-hd.jpg";
 import tonjaImgUrl from "@/assets/gt/tonja.jpg";
 
+// Slows the whole butterfly video (front and back butterflies).
+const HERO_PLAYBACK_RATE = 0.55;
+
 const iraRound = { url: iraRoundUrl };
 const eykeRound = { url: eykeRoundUrl };
 const tonjaRound = { url: tonjaRoundUrl };
@@ -194,6 +197,15 @@ function Index() {
       <section id="start" className="relative flex min-h-screen items-center overflow-hidden">
         <div ref={heroMedia} className="absolute inset-0 will-change-transform" aria-hidden>
           <video
+            ref={(v) => {
+              if (v) v.playbackRate = HERO_PLAYBACK_RATE;
+            }}
+            onLoadedMetadata={(e) => {
+              e.currentTarget.playbackRate = HERO_PLAYBACK_RATE;
+            }}
+            onPlay={(e) => {
+              e.currentTarget.playbackRate = HERO_PLAYBACK_RATE;
+            }}
             className="h-full w-full object-cover motion-reduce:hidden"
             poster={heroPosterUrl}
             autoPlay
