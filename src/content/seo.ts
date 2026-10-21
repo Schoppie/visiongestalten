@@ -5,6 +5,8 @@ export const SITE_NAME = "Global Triangle";
 
 /** Google business profile (Maps) – connects the website with the listing. */
 export const GOOGLE_MAPS_URL = "https://maps.google.com/maps?cid=1563202960694398056";
+export const GOOGLE_REVIEW_URL =
+  "https://search.google.com/local/writereview?placeid=ChIJV2dTvmHFs0cRaEwHgM-csRU";
 export const SAME_AS: string[] = [GOOGLE_MAPS_URL];
 
 export const BUSINESS_ID = `${SITE_URL}/#business`;
