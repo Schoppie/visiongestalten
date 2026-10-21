@@ -1,15 +1,15 @@
 import { useState, type FormEvent } from "react";
-import { useServerFn } from "@tanstack/react-start";
 import { Send, CheckCircle2 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { submitContact } from "@/lib/contact.functions";
+import { contactSchema, sendContactMessage } from "@/lib/contact";
 
 export function ContactForm() {
-  const submit = useServerFn(submitContact);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [error, setError] = useState<string | null>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -17,19 +17,29 @@ export function ContactForm() {
     if (!form.reportValidity()) return;
 
     const data = new FormData(form);
+    const input = {
+      name: String(data.get("name") ?? ""),
+      email: String(data.get("email") ?? ""),
+      message: String(data.get("message") ?? ""),
+      website: String(data.get("website") ?? ""),
+    };
+    const parsed = contactSchema.safeParse(input);
+    if (!parsed.success) {
+      setError(parsed.error.issues[0]?.message ?? "Bitte prüfe deine Angaben.");
+      setStatus("error");
+      return;
+    }
+
+    setError(null);
     setStatus("sending");
     try {
-      await submit({
-        data: {
-          name: String(data.get("name") ?? ""),
-          email: String(data.get("email") ?? ""),
-          message: String(data.get("message") ?? ""),
-          website: String(data.get("website") ?? ""),
-        },
-      });
+      await sendContactMessage(parsed.data);
       form.reset();
       setStatus("sent");
     } catch {
+      setError(
+        "Das hat leider nicht geklappt. Bitte versuche es erneut oder schreibe an info@global-triangle.de.",
+      );
       setStatus("error");
     }
   }
@@ -68,9 +78,9 @@ export function ContactForm() {
           <Label htmlFor="contact-website">Website</Label>
           <Input id="contact-website" name="website" tabIndex={-1} autoComplete="off" />
         </div>
-        {status === "error" && (
+        {status === "error" && error && (
           <p className="text-sm text-destructive" role="alert">
-            Das hat leider nicht geklappt. Bitte versuche es erneut oder schreibe an info@global-triangle.de.
+            {error}
           </p>
         )}
         <Button type="submit" size="lg" disabled={status === "sending"} className="h-12 rounded-full">
@@ -78,7 +88,12 @@ export function ContactForm() {
           {status !== "sending" && <Send />}
         </Button>
         <p className="text-xs leading-relaxed text-muted-foreground">
-          Mit dem Absenden erklärst du dich mit der Verarbeitung deiner Angaben zur Bearbeitung deiner Anfrage einverstanden.
+          Mit dem Absenden erklärst du dich mit der Verarbeitung deiner Angaben zur Bearbeitung
+          deiner Anfrage einverstanden. Mehr dazu in der{" "}
+          <Link to="/datenschutzerklaerung" className="underline underline-offset-2 hover:text-foreground">
+            Datenschutzerklärung
+          </Link>
+          .
         </p>
       </div>
     </form>

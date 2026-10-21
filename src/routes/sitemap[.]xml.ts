@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "";
+const BASE_URL = "https://global-triangle.de";
 
 interface SitemapEntry {
   path: string;
@@ -13,7 +13,15 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const entries: SitemapEntry[] = [{ path: "/", changefreq: "weekly", priority: "1.0" }];
+        const entries: SitemapEntry[] = [
+          { path: "/", changefreq: "weekly", priority: "1.0" },
+          { path: "/business-coaching", changefreq: "monthly", priority: "0.8" },
+          { path: "/grafik-webdesign-itzehoe", changefreq: "monthly", priority: "0.8" },
+          { path: "/fotografie", changefreq: "monthly", priority: "0.8" },
+          { path: "/referenzen", changefreq: "monthly", priority: "0.7" },
+          { path: "/impressum", changefreq: "yearly", priority: "0.2" },
+          { path: "/datenschutzerklaerung", changefreq: "yearly", priority: "0.2" },
+        ];
 
         const urls = entries.map((e) =>
           [

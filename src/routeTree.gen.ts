@@ -9,55 +9,133 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BusinessCoachingRouteImport } from './routes/business-coaching'
+import { Route as DatenschutzerklaerungRouteImport } from './routes/datenschutzerklaerung'
+import { Route as FotografieRouteImport } from './routes/fotografie'
+import { Route as GrafikWebdesignItzehoeRouteImport } from './routes/grafik-webdesign-itzehoe'
+import { Route as ImpressumRouteImport } from './routes/impressum'
+import { Route as ReferenzenRouteImport } from './routes/referenzen'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BusinessCoachingRoute = BusinessCoachingRouteImport.update({
+  id: '/business-coaching',
+  path: '/business-coaching',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DatenschutzerklaerungRoute = DatenschutzerklaerungRouteImport.update({
+  id: '/datenschutzerklaerung',
+  path: '/datenschutzerklaerung',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FotografieRoute = FotografieRouteImport.update({
+  id: '/fotografie',
+  path: '/fotografie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GrafikWebdesignItzehoeRoute = GrafikWebdesignItzehoeRouteImport.update({
+  id: '/grafik-webdesign-itzehoe',
+  path: '/grafik-webdesign-itzehoe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpressumRoute = ImpressumRouteImport.update({
+  id: '/impressum',
+  path: '/impressum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReferenzenRoute = ReferenzenRouteImport.update({
+  id: '/referenzen',
+  path: '/referenzen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/business-coaching': typeof BusinessCoachingRoute
+  '/datenschutzerklaerung': typeof DatenschutzerklaerungRoute
+  '/fotografie': typeof FotografieRoute
+  '/grafik-webdesign-itzehoe': typeof GrafikWebdesignItzehoeRoute
+  '/impressum': typeof ImpressumRoute
+  '/referenzen': typeof ReferenzenRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/business-coaching': typeof BusinessCoachingRoute
+  '/datenschutzerklaerung': typeof DatenschutzerklaerungRoute
+  '/fotografie': typeof FotografieRoute
+  '/grafik-webdesign-itzehoe': typeof GrafikWebdesignItzehoeRoute
+  '/impressum': typeof ImpressumRoute
+  '/referenzen': typeof ReferenzenRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/business-coaching': typeof BusinessCoachingRoute
+  '/datenschutzerklaerung': typeof DatenschutzerklaerungRoute
+  '/fotografie': typeof FotografieRoute
+  '/grafik-webdesign-itzehoe': typeof GrafikWebdesignItzehoeRoute
+  '/impressum': typeof ImpressumRoute
+  '/referenzen': typeof ReferenzenRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/business-coaching'
+    | '/datenschutzerklaerung'
+    | '/fotografie'
+    | '/grafik-webdesign-itzehoe'
+    | '/impressum'
+    | '/referenzen'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap.xml'
-  id: '__root__' | '/' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/business-coaching'
+    | '/datenschutzerklaerung'
+    | '/fotografie'
+    | '/grafik-webdesign-itzehoe'
+    | '/impressum'
+    | '/referenzen'
+    | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/business-coaching'
+    | '/datenschutzerklaerung'
+    | '/fotografie'
+    | '/grafik-webdesign-itzehoe'
+    | '/impressum'
+    | '/referenzen'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BusinessCoachingRoute: typeof BusinessCoachingRoute
+  DatenschutzerklaerungRoute: typeof DatenschutzerklaerungRoute
+  FotografieRoute: typeof FotografieRoute
+  GrafikWebdesignItzehoeRoute: typeof GrafikWebdesignItzehoeRoute
+  ImpressumRoute: typeof ImpressumRoute
+  ReferenzenRoute: typeof ReferenzenRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -65,11 +143,66 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/business-coaching': {
+      id: '/business-coaching'
+      path: '/business-coaching'
+      fullPath: '/business-coaching'
+      preLoaderRoute: typeof BusinessCoachingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/datenschutzerklaerung': {
+      id: '/datenschutzerklaerung'
+      path: '/datenschutzerklaerung'
+      fullPath: '/datenschutzerklaerung'
+      preLoaderRoute: typeof DatenschutzerklaerungRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fotografie': {
+      id: '/fotografie'
+      path: '/fotografie'
+      fullPath: '/fotografie'
+      preLoaderRoute: typeof FotografieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/grafik-webdesign-itzehoe': {
+      id: '/grafik-webdesign-itzehoe'
+      path: '/grafik-webdesign-itzehoe'
+      fullPath: '/grafik-webdesign-itzehoe'
+      preLoaderRoute: typeof GrafikWebdesignItzehoeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impressum': {
+      id: '/impressum'
+      path: '/impressum'
+      fullPath: '/impressum'
+      preLoaderRoute: typeof ImpressumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/referenzen': {
+      id: '/referenzen'
+      path: '/referenzen'
+      fullPath: '/referenzen'
+      preLoaderRoute: typeof ReferenzenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BusinessCoachingRoute: BusinessCoachingRoute,
+  DatenschutzerklaerungRoute: DatenschutzerklaerungRoute,
+  FotografieRoute: FotografieRoute,
+  GrafikWebdesignItzehoeRoute: GrafikWebdesignItzehoeRoute,
+  ImpressumRoute: ImpressumRoute,
+  ReferenzenRoute: ReferenzenRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
