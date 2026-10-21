@@ -10,6 +10,9 @@ import {
   Camera,
   Quote,
   Sparkles,
+  Phone,
+  Mail,
+  MapPin,
 } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { Logo, SiteFooter } from "@/components/site-layout";
