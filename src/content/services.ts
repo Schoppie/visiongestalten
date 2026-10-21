@@ -94,11 +94,11 @@ export const SERVICES: ServiceContent[] = [
   },
   {
     slug: "/grafik-webdesign-itzehoe",
-    eyebrow: "Grafikdesign & Webdesign in Itzehoe",
+    eyebrow: "Webdesign & Grafikdesign in Itzehoe",
     title: "Grafik & Webdesign",
-    metaTitle: "Grafik & Webdesign in Itzehoe – Eyke Szopieray | Global Triangle",
+    metaTitle: "Webdesign Itzehoe – Homepage, Logo & Flyer | Global Triangle",
     metaDescription:
-      "Logo, Visitenkarten, Flyer, Homepage und Außenwerbung aus einer Hand: Grafik & Webdesign von Eyke Szopieray in Itzehoe.",
+      "Webdesign und Grafikdesign in Itzehoe: Eyke Szopieray erstellt deine Homepage, dein Logo, Visitenkarten, Flyer und Außenwerbung – alles aus einer Hand.",
     intro: [
       "Du erhältst Visitenkarten, Flyer und eine neue Homepage, natürlich auch gerne ein Logo, Außenwerbung, Autobeschriftung, Fahnen, T-Shirts und das ganze Repertoire, wie du es dir wünscht.",
       "Ich fühle mich in deine Ideen für das Branding ein und stelle alles zusammen.",
@@ -138,15 +138,15 @@ export const SERVICES: ServiceContent[] = [
     slug: "/fotografie",
     eyebrow: "Fotografie in Itzehoe und Umgebung",
     title: "Fotografie",
-    metaTitle: "Business-Fotografie in Itzehoe – Tonja Fritz-Johnson | Global Triangle",
+    metaTitle: "Fotografin Itzehoe – Business-Fotos & Portraits | Global Triangle",
     metaDescription:
-      "Portraits, Teamfotos und Imageaufnahmen für Website, Social Media und Print: authentische Business-Fotografie von Tonja Fritz-Johnson.",
+      "Business-Fotografie in Itzehoe: Portraits, Headshots, Teamfotos und Imageaufnahmen für Website, Social Media und Print – authentisch fotografiert von Tonja Fritz-Johnson.",
     intro: [
       "Deine Bilder sind mehr als nur Fotos – sie sind das Aushängeschild deines Unternehmens. Mein Ziel ist es, dein Image authentisch widerzuspiegeln und genau die Kunden anzulocken, die zu dir passen.",
       "Deshalb biete ich professionelle, branchenübergreifende Fotografie in Itzehoe und Umgebung an, die dich und dein Business optimal in Szene setzt.",
     ],
     image: tonjaImgUrl,
-    imageAlt: "Tonja Fritz-Johnson – Fotografie",
+    imageAlt: "Tonja Fritz-Johnson – Fotografin für Business-Fotos in Itzehoe",
     person: { name: "Tonja Fritz-Johnson", role: "Fotografie" },
     highlightsTitle: "Ob für Website, Social Media oder Print",
     highlights: ["Portraits & Headshots", "Teamfotos", "Imageaufnahmen", "Vielseitig einsetzbare Bildserien"],
