@@ -38,7 +38,6 @@ const REFERENCES: { name: string; tag: string; url?: string }[] = [
   { name: "Ihre Perle Itzehoe", tag: "Webdesign" },
   { name: "Horsess", tag: "Coaching · Pferdetrainerin" },
   { name: "Forensic Training Partnership", tag: "Coaching" },
-  { name: "Visitenkarten", tag: "Print" },
 ];
 
 function ReferenzenPage() {
