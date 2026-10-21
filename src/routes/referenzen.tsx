@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ExternalLink } from "lucide-react";
-import { PageIntro, SubpageShell } from "@/components/site-layout";
+import { Brand, PageIntro, SubpageShell } from "@/components/site-layout";
 import { useReveal } from "@/hooks/use-reveal";
 import { breadcrumbJsonLd, pageHead } from "@/content/seo";
 
@@ -49,7 +49,7 @@ function ReferenzenPage() {
     <SubpageShell>
       <PageIntro eyebrow="Referenzen" title="Gemeinsam erfolgreich">
         <p>
-          Ein starker Verbund und eine gute Zusammenarbeit zeichnen Global Triangle aus. Gemeinsam mit
+          Ein starker Verbund und eine gute Zusammenarbeit zeichnen <Brand /> aus. Gemeinsam mit
           Ira, Eyke und Tonja – oder auch mit jedem von uns einzeln – kannst du erfolgreich
           zusammenarbeiten, um deine Ziele zu erreichen und dein Geschäft weiter auszubauen.
         </p>

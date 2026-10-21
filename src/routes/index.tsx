@@ -16,7 +16,7 @@ import {
   Star,
 } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
-import { Logo, SiteFooter } from "@/components/site-layout";
+import { Brand, Logo, SiteFooter } from "@/components/site-layout";
 import { ContactForm } from "@/components/contact-form";
 import { CONTACT } from "@/content/site";
 import { businessJsonLd, pageHead, GOOGLE_REVIEW_URL } from "@/content/seo";
@@ -219,7 +219,7 @@ function Index() {
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-foreground/85">
-              Global Triangle ist keine klassische Werbeagentur. Business Coaching, Grafik &
+              <Brand /> ist keine klassische Werbeagentur. Business Coaching, Grafik &
               Webdesign und Fotografie in Itzehoe – aus einer Hand. Mit uns startest du dein
               Business erfolgreich oder baust es weiter aus.
             </p>
