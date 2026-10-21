@@ -13,12 +13,13 @@ import {
   Phone,
   Mail,
   MapPin,
+  Star,
 } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { Logo, SiteFooter } from "@/components/site-layout";
 import { ContactForm } from "@/components/contact-form";
 import { CONTACT } from "@/content/site";
-import { businessJsonLd, pageHead } from "@/content/seo";
+import { businessJsonLd, pageHead, GOOGLE_REVIEW_URL } from "@/content/seo";
 
 import heroVideoUrl from "@/assets/gt/hero.mp4";
 import heroWebmUrl from "@/assets/gt/hero.webm";
@@ -399,6 +400,25 @@ function Index() {
                 </span>
               </li>
             </ul>
+            <div className="mt-10 rounded-2xl border border-border bg-card p-6 shadow-soft">
+              <p className="flex items-center gap-1 text-gold" aria-hidden>
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <Star key={i} className="h-5 w-5 fill-current" />
+                ))}
+              </p>
+              <p className="mt-3 text-lg font-medium">Zufrieden mit uns?</p>
+              <p className="mt-1 text-muted-foreground">
+                Wir freuen uns sehr über deine Bewertung bei Google – sie hilft anderen, uns zu finden.
+              </p>
+              <a
+                href={GOOGLE_REVIEW_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 font-medium text-accent-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+              >
+                Jetzt bei Google bewerten <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
           </div>
           <div className="reveal">
             <ContactForm />
