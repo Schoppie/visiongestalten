@@ -78,9 +78,9 @@ export function ContactForm() {
           <Label htmlFor="contact-website">Website</Label>
           <Input id="contact-website" name="website" tabIndex={-1} autoComplete="off" />
         </div>
-        {status === "error" && (
+        {status === "error" && error && (
           <p className="text-sm text-destructive" role="alert">
-            Das hat leider nicht geklappt. Bitte versuche es erneut oder schreibe an info@global-triangle.de.
+            {error}
           </p>
         )}
         <Button type="submit" size="lg" disabled={status === "sending"} className="h-12 rounded-full">
@@ -88,7 +88,12 @@ export function ContactForm() {
           {status !== "sending" && <Send />}
         </Button>
         <p className="text-xs leading-relaxed text-muted-foreground">
-          Mit dem Absenden erklärst du dich mit der Verarbeitung deiner Angaben zur Bearbeitung deiner Anfrage einverstanden.
+          Mit dem Absenden erklärst du dich mit der Verarbeitung deiner Angaben zur Bearbeitung
+          deiner Anfrage einverstanden. Mehr dazu in der{" "}
+          <Link to="/datenschutzerklaerung" className="underline underline-offset-2 hover:text-foreground">
+            Datenschutzerklärung
+          </Link>
+          .
         </p>
       </div>
     </form>
