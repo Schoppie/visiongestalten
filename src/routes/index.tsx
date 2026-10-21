@@ -366,37 +366,45 @@ function Index() {
 
       {/* Kontakt */}
       <section id="kontakt" className="bg-background py-24">
-        <div className="mx-auto max-w-4xl px-5 text-center reveal">
-          <p className="eyebrow text-gold">Kontakt</p>
-          <h2 className="mt-3 text-4xl font-medium sm:text-5xl">Lass uns dein Vorhaben angehen</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Wir agieren seit Jahren erfolgreich im Webdesign, der Fotografie und im Coaching –
-            regional und national. Wir arbeiten pragmatisch und lösungsorientiert und sind allem
-            aufgeschlossen. Melde dich für ein kostenfreies Analyse-Gespräch.
-          </p>
-          <div className="mt-9 flex flex-wrap justify-center gap-4">
-            <a
-              href="mailto:info@global-triangle.de"
-              className="inline-flex items-center gap-2 rounded-full bg-navy px-8 py-3 font-medium text-navy-foreground shadow-soft transition-transform hover:-translate-y-0.5"
-            >
-              Jetzt Kontakt aufnehmen <ArrowRight className="h-4 w-4" />
-            </a>
+        <div className="mx-auto grid max-w-6xl items-start gap-12 px-5 md:grid-cols-[0.9fr_1.1fr]">
+          <div className="reveal">
+            <p className="eyebrow text-gold">Kontakt</p>
+            <h2 className="mt-3 text-4xl font-medium sm:text-5xl">Lass uns dein Vorhaben angehen</h2>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              Wir agieren seit Jahren erfolgreich im Webdesign, der Fotografie und im Coaching –
+              regional und national. Wir arbeiten pragmatisch und lösungsorientiert und sind allem
+              aufgeschlossen. Melde dich für ein kostenfreies Analyse-Gespräch.
+            </p>
+            <ul className="mt-8 space-y-4 text-lg">
+              <li className="flex items-center gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-gold">
+                  <Phone className="h-4 w-4" />
+                </span>
+                <a href={CONTACT.phoneHref} className="hover:text-gold">{CONTACT.phone}</a>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-gold">
+                  <Mail className="h-4 w-4" />
+                </span>
+                <a href={`mailto:${CONTACT.email}`} className="hover:text-gold">{CONTACT.email}</a>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-gold">
+                  <MapPin className="h-4 w-4" />
+                </span>
+                <span>
+                  {CONTACT.street}, {CONTACT.city}
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div className="reveal">
+            <ContactForm />
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border bg-navy py-12 text-navy-foreground">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-5 text-center">
-          <Logo className="text-navy-foreground" />
-          <p className="text-sm text-navy-foreground/70">
-            Global Triangle · Coaching, Grafik & Webdesign und Fotografie · Itzehoe
-          </p>
-          <p className="text-xs text-navy-foreground/50">
-            © {new Date().getFullYear()} Global Triangle. Alle Rechte vorbehalten.
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
