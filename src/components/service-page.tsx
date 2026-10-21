@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, ExternalLink, Phone, Quote } from "lucide-react";
-import { SubpageShell } from "@/components/site-layout";
+import { SubpageShell, withBrand } from "@/components/site-layout";
 import { useReveal } from "@/hooks/use-reveal";
 import { CONTACT } from "@/content/site";
 import { SERVICES, type ServiceContent } from "@/content/services";
