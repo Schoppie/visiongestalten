@@ -15,8 +15,10 @@ export function ServicePage({ service: s }: { service: ServiceContent }) {
       <section className="relative overflow-hidden bg-navy text-navy-foreground">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:py-24 md:grid-cols-[1.15fr_0.85fr]">
           <div className="reveal">
-            <p className="eyebrow text-gold">{s.eyebrow}</p>
-            <h1 className="mt-4 text-5xl font-medium leading-[1.05] sm:text-7xl">{s.title}</h1>
+            <h1>
+              <span className="eyebrow block text-gold">{s.eyebrow}</span>
+              <span className="mt-4 block text-5xl font-medium leading-[1.05] sm:text-7xl">{s.title}</span>
+            </h1>
             <div className="mt-6 max-w-2xl space-y-4 text-lg leading-relaxed text-navy-foreground/85">
               {s.intro.map((p) => (
                 <p key={p}>{p}</p>
@@ -186,7 +188,7 @@ export function ServicePage({ service: s }: { service: ServiceContent }) {
               >
                 <img
                   src={o.image}
-                  alt=""
+                  alt={o.imageAlt}
                   className="h-20 w-20 rounded-full object-cover ring-4 ring-secondary"
                   style={{ objectPosition: o.imagePosition ?? "50% 30%" }}
                   loading="lazy"

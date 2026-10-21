@@ -2,22 +2,25 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { PageIntro, SubpageShell } from "@/components/site-layout";
 import { useReveal } from "@/hooks/use-reveal";
+import { breadcrumbJsonLd, pageHead } from "@/content/seo";
 
-const TITLE = "Referenzen – Global Triangle Itzehoe";
+const TITLE = "Referenzen – Werbeagentur Global Triangle Itzehoe";
 const DESCRIPTION =
-  "Ausgewählte Projekte von Global Triangle: Websites, Logos, Visitenkarten und Coaching für Unternehmen und Vereine in Itzehoe und Umgebung.";
+  "Referenzen der Werbeagentur Global Triangle: Websites, Logos, Visitenkarten und Coaching für Unternehmen und Vereine in Itzehoe und im Kreis Steinburg.";
 
 export const Route = createFileRoute("/referenzen")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      path: "/referenzen",
+      title: TITLE,
+      description: DESCRIPTION,
+      jsonLd: [
+        breadcrumbJsonLd([
+          { name: "Start", path: "/" },
+          { name: "Referenzen", path: "/referenzen" },
+        ]),
+      ],
+    }),
   component: ReferenzenPage,
 });
 

@@ -64,6 +64,7 @@ const LEISTUNGEN = [
     to: "/business-coaching" as const,
     image: iraRound,
     title: "Coaching & Mentoring",
+    alt: "Ira Köhnke – Business Coaching in Itzehoe",
     text: "Als bewährte Business-Coachin erstelle ich individuelle Lösungskonzepte für Firmen und Privatpersonen in Itzehoe und Umgebung. Ich unterstütze deine Ziele im Workout mit meinem umfassenden Coachingwissen.",
   },
   {
@@ -71,6 +72,7 @@ const LEISTUNGEN = [
     to: "/grafik-webdesign-itzehoe" as const,
     image: eykeRound,
     title: "Grafik & Webdesign",
+    alt: "Eyke Szopieray – Webdesign und Grafikdesign in Itzehoe",
     text: "Als gelernte Schriftsetzerin und Marketingmanagerin in einer IT-Firma und Freelancerin fehlt mir das Potenzial für Langeweile. Mein Kopf ist voller Ideen und ich liebe es, kreativ zu sein.",
   },
   {
@@ -78,6 +80,7 @@ const LEISTUNGEN = [
     to: "/fotografie" as const,
     image: tonjaRound,
     title: "Fotografie",
+    alt: "Tonja Fritz-Johnson – Business-Fotografie in Itzehoe",
     text: "Deine Bilder sollen dein Image reflektieren und für dich die richtigen Kunden anziehen. Ich arbeite mit dir und dem Design-Team und setze mich persönlich für deinen Erfolg ein – du sollst authentisch wirken.",
   },
 ];

@@ -1,23 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageIntro, SubpageShell } from "@/components/site-layout";
 import { DATENSCHUTZ } from "@/content/datenschutz";
+import { pageHead } from "@/content/seo";
 
 const TITLE = "Datenschutzerklärung – Global Triangle Itzehoe";
 const DESCRIPTION =
   "Datenschutzerklärung von Global Triangle: Informationen zur Verarbeitung personenbezogener Daten, Hosting, Kontaktformular und deinen Rechten.";
 
 export const Route = createFileRoute("/datenschutzerklaerung")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "robots", content: "noindex, follow" },
-    ],
-  }),
+  head: () =>
+    pageHead({ path: "/datenschutzerklaerung", title: TITLE, description: DESCRIPTION, noindex: true }),
   component: DatenschutzPage,
 });
 
