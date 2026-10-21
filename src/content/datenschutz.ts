@@ -60,11 +60,11 @@ export const DATENSCHUTZ: LegalBlock[] = [
   },
   {
     "type": "h3",
-    "text": "Vercel"
+    "text": "Lovable"
   },
   {
     "type": "p",
-    "text": "Anbieter ist die Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA (nachfolgend „Vercel“). Wenn Sie unsere Website besuchen, erfasst Vercel verschiedene Logfiles inklusive Ihrer IP-Adressen. Details entnehmen Sie der Datenschutzerklärung von Vercel: https://vercel.com/legal/privacy-policy. Die Verwendung von Vercel erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website."
+    "text": "Anbieter ist die Lovable Labs AB, Box 190, 101 23 Stockholm, Schweden (nachfolgend „Lovable“). Wenn Sie unsere Website besuchen, verarbeitet Lovable die technisch notwendigen Daten, um Ihnen die Website auszuliefern, insbesondere Logfiles inklusive Ihrer IP-Adresse, Browsertyp und -version, Betriebssystem, Referrer-URL, aufgerufene Seiten sowie Datum und Uhrzeit des Zugriffs. Für Datenbank- und Speicherdienste (z. B. die Speicherung von Kontaktformular-Nachrichten) setzt Lovable den Dienstleister Supabase ein. Soweit dabei Daten in Drittländer übermittelt werden, erfolgt dies auf Grundlage geeigneter Garantien, insbesondere der EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO). Details entnehmen Sie der Datenschutzerklärung von Lovable: https://lovable.dev/privacy. Die Verwendung von Lovable erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website."
   },
   {
     "type": "h2",
