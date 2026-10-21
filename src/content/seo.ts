@@ -3,8 +3,9 @@ import { CONTACT, SITE_URL } from "@/content/site";
 
 export const SITE_NAME = "Global Triangle";
 
-/** Link the Google business profile here once known (e.g. Maps URL). */
-export const SAME_AS: string[] = [];
+/** Google business profile (Maps) – connects the website with the listing. */
+export const GOOGLE_MAPS_URL = "https://maps.google.com/maps?cid=1563202960694398056";
+export const SAME_AS: string[] = [GOOGLE_MAPS_URL];
 
 export const BUSINESS_ID = `${SITE_URL}/#business`;
 
@@ -18,6 +19,7 @@ export function businessJsonLd() {
       "Werbeagentur in Itzehoe für Grafik & Webdesign, Business-Coaching und Fotografie – alles aus einer Hand.",
     url: `${SITE_URL}/`,
     telephone: "+49 151 17805363",
+    hasMap: GOOGLE_MAPS_URL,
     email: CONTACT.email,
     address: {
       "@type": "PostalAddress",
