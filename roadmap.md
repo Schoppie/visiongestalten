@@ -20,3 +20,4 @@
 - [x] Header-Video: keine Nadeln hinter der Schrift (nur rechte Seite)
 - [x] Team-Foto Eyke (Sofa): neues Gesicht mit Brille, kürzere Haare, Hand weg, Person kleiner wie Ira/Tonja
 - [x] Ira-Foto schärfen; Ira als KI-Expertin (Gemini & Copilot) statt Business-Coachin
+- [x] ChatGPT in Iras KI-Liste; Ira-Foto (Kinn) unverändert lassen
