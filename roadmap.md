@@ -18,3 +18,4 @@
 - [x] Eykes Gesicht im Kartenfoto etwas schlanker
 - [x] Header-Video: Flimmern der Nadeln beheben
 - [ ] Header-Video: keine Nadeln hinter der Schrift (nur rechte Seite)
+- [ ] Team-Foto Eyke (Sofa): neues Gesicht mit Brille, kürzere Haare, Hand weg, Person kleiner wie Ira/Tonja
