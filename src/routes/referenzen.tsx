@@ -39,6 +39,7 @@ const REFERENCES: { name: string; tag: string; url?: string }[] = [
   { name: "Ihre Perle Itzehoe", tag: "Webdesign", url: "https://ihre-perle-itzehoe.de/" },
   { name: "Rednerservice Seifert", tag: "Webdesign", url: "https://rednerservice-seifert.de/" },
   { name: "Matthias Menzel", tag: "Webdesign", url: "https://matthiasmenzel.de/" },
+  { name: "Anke Fricke", tag: "Webdesign", url: "https://anke-fricke.de/" },
 ];
 
 function ReferenzenPage() {
