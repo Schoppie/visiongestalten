@@ -16,7 +16,10 @@ import {
   BrainCircuit,
   Instagram,
 } from "lucide-react";
-...
+import { useReveal } from "@/hooks/use-reveal";
+import { Brand, Logo, SiteFooter } from "@/components/site-layout";
+import { ContactForm } from "@/components/contact-form";
+import { CONTACT } from "@/content/site";
 import { businessJsonLd, pageHead, GOOGLE_REVIEW_URL, INSTAGRAM_URL } from "@/content/seo";
 
 import heroVideoUrl from "@/assets/gt/hero-pins.mp4";
