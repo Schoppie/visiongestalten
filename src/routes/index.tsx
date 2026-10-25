@@ -48,7 +48,7 @@ export const Route = createFileRoute("/")({
       path: "/",
       title: "Werbeagentur Itzehoe – Webdesign, KI-Coaching & Fotografie | Global Triangle",
       description:
-        "Global Triangle ist deine Werbeagentur in Itzehoe: Webdesign & Grafik, KI-Coaching mit Gemini und Copilot und Fotografie aus einer Hand – für Gründer und Unternehmen im Kreis Steinburg.",
+        "Global Triangle ist deine Werbeagentur in Itzehoe: Webdesign & Grafik, KI-Coaching mit Gemini, ChatGPT und Copilot und Fotografie aus einer Hand – für Gründer und Unternehmen im Kreis Steinburg.",
       jsonLd: [businessJsonLd()],
     }),
   component: Index,
@@ -70,7 +70,7 @@ const LEISTUNGEN = [
     image: iraRound,
     title: "KI-Coaching",
     alt: "Ira Köhnke – KI-Expertin und KI-Coaching in Itzehoe",
-    text: "Als KI-Expertin zeige ich dir, wie du künstliche Intelligenz sinnvoll in deinem Arbeitsalltag einsetzt – vor allem Google Gemini und Microsoft Copilot. Praxisnah, verständlich und genau auf deine Aufgaben zugeschnitten.",
+    text: "Als KI-Expertin zeige ich dir, wie du künstliche Intelligenz sinnvoll in deinem Arbeitsalltag einsetzt – vor allem Google Gemini, ChatGPT und Microsoft Copilot. Praxisnah, verständlich und genau auf deine Aufgaben zugeschnitten.",
   },
   {
     icon: PenTool,
@@ -95,7 +95,7 @@ const TEAM = [
     name: "Ira Köhnke",
     role: "KI-Expertin",
     image: iraImg,
-    text: "Ira ist unsere KI-Expertin. Sie zeigt dir Schritt für Schritt, wie du Google Gemini und Microsoft Copilot im Alltag nutzt – damit du Zeit sparst und mehr aus deinem Business herausholst.",
+    text: "Ira ist unsere KI-Expertin. Sie zeigt dir Schritt für Schritt, wie du Google Gemini, ChatGPT und Microsoft Copilot im Alltag nutzt – damit du Zeit sparst und mehr aus deinem Business herausholst.",
   },
   {
     name: "Eyke Szopieray",
