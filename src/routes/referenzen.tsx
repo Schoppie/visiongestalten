@@ -46,7 +46,7 @@ const REFERENCES: { name: string; tag: string; url?: string; img?: string }[] = 
   { name: "Rednerservice Seifert", tag: "Webdesign", url: "https://rednerservice-seifert.de/", img: img_seifert },
   { name: "Matthias Menzel", tag: "Webdesign", url: "https://matthiasmenzel.de/", img: img_menzel },
   { name: "Lauschbar Itzehoe", tag: "Plakat", url: "https://www.instagram.com/global.triangle.de/p/DHYiqvBMB4M/", img: img_lauschbar },
-  { name: "Anke Fricke", tag: "Webdesign", url: "https://anke-fricke.de/", img: img_fricke },
+  { name: "Anke Fricke", tag: "Webdesign · Schaufenster", url: "https://anke-fricke.de/", img: img_fricke },
   {
     name: "Kiddy Kommode",
     tag: "Gestaltung",
