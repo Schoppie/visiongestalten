@@ -18,7 +18,7 @@ export function businessJsonLd() {
     "@id": BUSINESS_ID,
     name: SITE_NAME,
     description:
-      "Werbeagentur in Itzehoe für Grafik & Webdesign, Business-Coaching und Fotografie – alles aus einer Hand.",
+      "Werbeagentur in Itzehoe für Grafik & Webdesign, KI-Coaching und Fotografie – alles aus einer Hand.",
     url: `${SITE_URL}/`,
     telephone: "+49 151 17805363",
     hasMap: GOOGLE_MAPS_URL,
@@ -44,9 +44,9 @@ export function businessJsonLd() {
       { "@type": "City", name: "Itzehoe" },
       { "@type": "AdministrativeArea", name: "Kreis Steinburg" },
     ],
-    knowsAbout: ["Werbeagentur", "Webdesign", "Grafikdesign", "Business Coaching", "Fotografie"],
+    knowsAbout: ["Werbeagentur", "Webdesign", "Grafikdesign", "KI-Coaching", "Google Gemini", "Microsoft Copilot", "Fotografie"],
     employee: [
-      { "@type": "Person", name: "Ira Köhnke", jobTitle: "Business-Coachin" },
+      { "@type": "Person", name: "Ira Köhnke", jobTitle: "KI-Expertin" },
       { "@type": "Person", name: "Eyke Szopieray", jobTitle: "Grafik- & Webdesignerin" },
       { "@type": "Person", name: "Tonja Fritz-Johnson", jobTitle: "Fotografin" },
     ],

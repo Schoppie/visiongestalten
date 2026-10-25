@@ -5,7 +5,6 @@ import {
   X,
   ArrowDown,
   ArrowRight,
-  Compass,
   PenTool,
   Camera,
   Quote,
@@ -14,6 +13,7 @@ import {
   Mail,
   MapPin,
   Star,
+  BrainCircuit,
 } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { Brand, Logo, SiteFooter } from "@/components/site-layout";
@@ -28,7 +28,7 @@ import heroEndUrl from "@/assets/gt/hero-pins-end.jpg";
 import iraRoundUrl from "@/assets/gt/ira_round.png";
 import eykeRoundUrl from "@/assets/gt/eyke_round.png";
 import tonjaRoundUrl from "@/assets/gt/tonja_round.png";
-import iraImgUrl from "@/assets/gt/ira.jpg";
+import iraImgUrl from "@/assets/gt/ira-hd.jpg";
 import eykeImgUrl from "@/assets/gt/eyke-team.jpg";
 import tonjaImgUrl from "@/assets/gt/tonja.jpg";
 
@@ -46,9 +46,9 @@ export const Route = createFileRoute("/")({
   head: () =>
     pageHead({
       path: "/",
-      title: "Werbeagentur Itzehoe – Webdesign, Coaching & Fotografie | Global Triangle",
+      title: "Werbeagentur Itzehoe – Webdesign, KI-Coaching & Fotografie | Global Triangle",
       description:
-        "Global Triangle ist deine Werbeagentur in Itzehoe: Webdesign & Grafik, Business Coaching und Fotografie aus einer Hand – für Gründer und Unternehmen im Kreis Steinburg.",
+        "Global Triangle ist deine Werbeagentur in Itzehoe: Webdesign & Grafik, KI-Coaching mit Gemini und Copilot und Fotografie aus einer Hand – für Gründer und Unternehmen im Kreis Steinburg.",
       jsonLd: [businessJsonLd()],
     }),
   component: Index,
@@ -65,12 +65,12 @@ const NAV: { label: string; id?: string; to?: "/referenzen" }[] = [
 
 const LEISTUNGEN = [
   {
-    icon: Compass,
+    icon: BrainCircuit,
     to: "/business-coaching" as const,
     image: iraRound,
-    title: "Coaching & Mentoring",
-    alt: "Ira Köhnke – Business Coaching in Itzehoe",
-    text: "Als bewährte Business-Coachin erstelle ich individuelle Lösungskonzepte für Firmen und Privatpersonen in Itzehoe und Umgebung. Ich unterstütze deine Ziele im Workout mit meinem umfassenden Coachingwissen.",
+    title: "KI-Coaching",
+    alt: "Ira Köhnke – KI-Expertin und KI-Coaching in Itzehoe",
+    text: "Als KI-Expertin zeige ich dir, wie du künstliche Intelligenz sinnvoll in deinem Arbeitsalltag einsetzt – vor allem Google Gemini und Microsoft Copilot. Praxisnah, verständlich und genau auf deine Aufgaben zugeschnitten.",
   },
   {
     icon: PenTool,
@@ -93,9 +93,9 @@ const LEISTUNGEN = [
 const TEAM = [
   {
     name: "Ira Köhnke",
-    role: "Coaching & Mentoring",
+    role: "KI-Expertin",
     image: iraImg,
-    text: "Ira ist deine Beraterin, die dich positiv coacht und dir alles Wissen anhand gibt, welches du für dein Geschäft – ob Start oder bereits bestehendes Business – benötigst.",
+    text: "Ira ist unsere KI-Expertin. Sie zeigt dir Schritt für Schritt, wie du Google Gemini und Microsoft Copilot im Alltag nutzt – damit du Zeit sparst und mehr aus deinem Business herausholst.",
   },
   {
     name: "Eyke Szopieray",
@@ -232,7 +232,7 @@ function Index() {
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-foreground/85">
-              <Brand /> ist keine klassische Werbeagentur. Business Coaching, Grafik &
+              <Brand /> ist keine klassische Werbeagentur. KI-Coaching, Grafik &
               Webdesign und Fotografie in Itzehoe – aus einer Hand. Mit uns startest du dein
               Business erfolgreich oder baust es weiter aus.
             </p>
@@ -310,7 +310,7 @@ function Index() {
           <div className="reveal overflow-hidden rounded-3xl shadow-lift">
             <img
               src={iraImg.url}
-              alt="Ira Köhnke von Global Triangle – Werbeagentur und Business Coaching in Itzehoe"
+              alt="Ira Köhnke von Global Triangle – KI-Expertin und KI-Coaching in Itzehoe"
               className="h-full w-full object-cover"
               loading="lazy"
             />
@@ -387,7 +387,7 @@ function Index() {
             <p className="eyebrow text-gold">Kontakt</p>
             <h2 className="mt-3 text-4xl font-medium sm:text-5xl">Lass uns dein Vorhaben angehen</h2>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              Wir agieren seit Jahren erfolgreich im Webdesign, der Fotografie und im Coaching –
+              Wir agieren seit Jahren erfolgreich im Webdesign, in der Fotografie und in der Beratung –
               regional und national. Wir arbeiten pragmatisch und lösungsorientiert und sind allem
               aufgeschlossen. Melde dich für ein kostenfreies Analyse-Gespräch.
             </p>

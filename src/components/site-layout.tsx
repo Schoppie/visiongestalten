@@ -108,7 +108,7 @@ export function SiteFooter() {
         <div>
           <Logo />
           <p className="mt-5 text-sm leading-relaxed text-navy-foreground/70">
-            Coaching, Grafik & Webdesign und Fotografie aus einer Hand – in Itzehoe und Umgebung.
+            KI-Coaching, Grafik & Webdesign und Fotografie aus einer Hand – in Itzehoe und Umgebung.
           </p>
         </div>
         <div>

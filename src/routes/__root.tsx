@@ -78,18 +78,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Global Triangle – Coaching, Grafik & Fotografie in Itzehoe" },
+      { title: "Global Triangle – KI-Coaching, Grafik & Fotografie in Itzehoe" },
       {
         name: "description",
         content:
-          "Global Triangle in Itzehoe: Business-Coaching, Grafik & Webdesign und Fotografie aus einer Hand. Ira, Eyke und Tonja begleiten dich bei Start und Wachstum.",
+          "Global Triangle in Itzehoe: KI-Coaching, Grafik & Webdesign und Fotografie aus einer Hand. Ira, Eyke und Tonja begleiten dich bei Start und Wachstum.",
       },
       { name: "author", content: "Global Triangle" },
-      { property: "og:title", content: "Global Triangle – Coaching, Grafik & Fotografie in Itzehoe" },
+      { property: "og:title", content: "Global Triangle – KI-Coaching, Grafik & Fotografie in Itzehoe" },
       {
         property: "og:description",
         content:
-          "Coaching, Grafik & Webdesign und Fotografie aus einer Hand – wir unterstützen dich in deinem Vorhaben.",
+          "KI-Coaching, Grafik & Webdesign und Fotografie aus einer Hand – wir unterstützen dich in deinem Vorhaben.",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Global Triangle" },
