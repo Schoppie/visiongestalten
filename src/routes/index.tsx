@@ -220,7 +220,7 @@ function Index() {
           </video>
           <img src={heroEndUrl} alt="" className="hidden h-full w-full object-cover motion-reduce:block" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/80 via-navy/45 to-navy/75" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/35 to-navy/0" aria-hidden />
         <div className="relative mx-auto w-full max-w-6xl px-5 pt-24">
           <div className="max-w-2xl reveal">
             <h1>
