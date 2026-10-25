@@ -2,6 +2,15 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { Brand, PageIntro, SubpageShell } from "@/components/site-layout";
 import { useReveal } from "@/hooks/use-reveal";
+import img_kamilla from "@/assets/refs/kamilla.jpg";
+import img_sci from "@/assets/refs/sci.jpg";
+import img_hinrichs from "@/assets/refs/hinrichs.jpg";
+import img_schuetzen from "@/assets/refs/schuetzen.jpg";
+import img_lutima from "@/assets/refs/lutima.jpg";
+import img_perle from "@/assets/refs/perle.jpg";
+import img_seifert from "@/assets/refs/seifert.jpg";
+import img_menzel from "@/assets/refs/menzel.jpg";
+import img_fricke from "@/assets/refs/fricke.jpg";
 import { breadcrumbJsonLd, pageHead } from "@/content/seo";
 
 const TITLE = "Referenzen – Werbeagentur Global Triangle Itzehoe";
@@ -25,21 +34,21 @@ export const Route = createFileRoute("/referenzen")({
 });
 
 // Kundenliste der bisherigen Referenzen-Seite.
-const REFERENCES: { name: string; tag: string; url?: string }[] = [
+const REFERENCES: { name: string; tag: string; url?: string; img?: string }[] = [
   {
     name: "Kiddy Kommode",
     tag: "Gestaltung",
     url: "https://www.11880.com/branchenbuch/itzehoe/181142902B102152514/kiddy-kommode-heike-paulsen.html",
   },
-  { name: "Kamilla Medizinische Fußpflege", tag: "Gestaltung", url: "https://kamilla-medizinische-fusspflege.de/" },
-  { name: "SCI Itzehoe – Schwimmschule", tag: "Gestaltung", url: "https://sport-club-itzehoe.de/sportarten/schwimmschule/" },
-  { name: "Physiotherapie Hinrichs", tag: "Webdesign", url: "https://www.physiotherapie-hinrichs.de/" },
-  { name: "Itzehoer Schützenverein", tag: "Gestaltung", url: "https://itzehoer-schuetzenverein.de/" },
-  { name: "Lutima", tag: "Gestaltung", url: "https://lutima.de/" },
-  { name: "Ihre Perle Itzehoe", tag: "Webdesign", url: "https://ihre-perle-itzehoe.de/" },
-  { name: "Rednerservice Seifert", tag: "Webdesign", url: "https://rednerservice-seifert.de/" },
-  { name: "Matthias Menzel", tag: "Webdesign", url: "https://matthiasmenzel.de/" },
-  { name: "Anke Fricke", tag: "Webdesign", url: "https://anke-fricke.de/" },
+  { name: "Kamilla Medizinische Fußpflege", tag: "Gestaltung", url: "https://kamilla-medizinische-fusspflege.de/", img: img_kamilla },
+  { name: "SCI Itzehoe – Schwimmschule", tag: "Gestaltung", url: "https://sport-club-itzehoe.de/sportarten/schwimmschule/", img: img_sci },
+  { name: "Physiotherapie Hinrichs", tag: "Webdesign", url: "https://www.physiotherapie-hinrichs.de/", img: img_hinrichs },
+  { name: "Itzehoer Schützenverein", tag: "Gestaltung", url: "https://itzehoer-schuetzenverein.de/", img: img_schuetzen },
+  { name: "Lutima", tag: "Gestaltung", url: "https://lutima.de/", img: img_lutima },
+  { name: "Ihre Perle Itzehoe", tag: "Webdesign", url: "https://ihre-perle-itzehoe.de/", img: img_perle },
+  { name: "Rednerservice Seifert", tag: "Webdesign", url: "https://rednerservice-seifert.de/", img: img_seifert },
+  { name: "Matthias Menzel", tag: "Webdesign", url: "https://matthiasmenzel.de/", img: img_menzel },
+  { name: "Anke Fricke", tag: "Webdesign", url: "https://anke-fricke.de/", img: img_fricke },
 ];
 
 function ReferenzenPage() {
@@ -59,6 +68,16 @@ function ReferenzenPage() {
           {REFERENCES.map((r, i) => {
             const inner = (
               <>
+                {r.img && (
+                  <img
+                    src={r.img}
+                    alt={`Startseite ${r.name}`}
+                    loading="lazy"
+                    width={800}
+                    height={500}
+                    className="-mx-7 -mt-7 mb-6 aspect-[16/10] w-[calc(100%+3.5rem)] max-w-none rounded-t-2xl border-b border-border object-cover object-top"
+                  />
+                )}
                 <span className="eyebrow text-gold">{r.tag}</span>
                 <span className="mt-3 block font-display text-3xl font-semibold leading-tight">{r.name}</span>
                 {r.url && (
@@ -69,7 +88,7 @@ function ReferenzenPage() {
               </>
             );
             const cls =
-              "reveal group flex min-h-48 flex-col rounded-2xl border border-border bg-card p-7 shadow-soft transition-all";
+              "reveal group flex min-h-48 flex-col overflow-hidden rounded-2xl border border-border bg-card p-7 shadow-soft transition-all";
             return r.url ? (
               <a
                 key={r.name}
