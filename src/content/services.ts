@@ -90,7 +90,6 @@ export const SERVICES: ServiceContent[] = [
       items: [
         { name: "Horsess", text: "Pferdetrainerin" },
         { name: "Forensic Training Partnership", text: "Forensic Training Partnership" },
-        { name: "Body Mind Health Training", text: "Mobiles Gesundheitstraining" },
       ],
     },
   },
