@@ -10,7 +10,9 @@ import img_lutima from "@/assets/refs/lutima.jpg";
 import img_perle from "@/assets/refs/perle.jpg";
 import img_seifert from "@/assets/refs/seifert.jpg";
 import img_menzel from "@/assets/refs/menzel.jpg";
-import img_fricke from "@/assets/refs/fricke.jpg";
+import img_fricke from "@/assets/refs/schoengesund.jpg";
+import img_lauschbar from "@/assets/refs/lauschbar.jpg";
+import img_kiddy from "@/assets/refs/kiddy-kommode.jpg";
 import { breadcrumbJsonLd, pageHead } from "@/content/seo";
 
 const TITLE = "Referenzen – Werbeagentur Global Triangle Itzehoe";
@@ -43,11 +45,13 @@ const REFERENCES: { name: string; tag: string; url?: string; img?: string }[] = 
   { name: "Ihre Perle Itzehoe", tag: "Webdesign", url: "https://ihre-perle-itzehoe.de/", img: img_perle },
   { name: "Rednerservice Seifert", tag: "Webdesign", url: "https://rednerservice-seifert.de/", img: img_seifert },
   { name: "Matthias Menzel", tag: "Webdesign", url: "https://matthiasmenzel.de/", img: img_menzel },
+  { name: "Lauschbar Itzehoe", tag: "Plakat", url: "https://www.instagram.com/global.triangle.de/p/DHYiqvBMB4M/", img: img_lauschbar },
   { name: "Anke Fricke", tag: "Webdesign", url: "https://anke-fricke.de/", img: img_fricke },
   {
     name: "Kiddy Kommode",
     tag: "Gestaltung",
     url: "https://www.11880.com/branchenbuch/itzehoe/181142902B102152514/kiddy-kommode-heike-paulsen.html",
+    img: img_kiddy,
   },
 ];
 
