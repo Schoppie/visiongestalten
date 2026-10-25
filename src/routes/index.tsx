@@ -29,7 +29,7 @@ import iraRoundUrl from "@/assets/gt/ira_round.png";
 import eykeRoundUrl from "@/assets/gt/eyke_round.png";
 import tonjaRoundUrl from "@/assets/gt/tonja_round.png";
 import iraImgUrl from "@/assets/gt/ira.jpg";
-import eykeImgUrl from "@/assets/gt/eyke-hd.jpg";
+import eykeImgUrl from "@/assets/gt/eyke-team.jpg";
 import tonjaImgUrl from "@/assets/gt/tonja.jpg";
 
 // The video file itself is already slowed down (2.5x, with smooth in-between frames).
@@ -207,7 +207,7 @@ function Index() {
             onPlay={(e) => {
               e.currentTarget.playbackRate = HERO_PLAYBACK_RATE;
             }}
-            className="h-full w-full object-cover motion-reduce:hidden"
+            className="h-full w-full object-cover object-[75%_center] motion-reduce:hidden"
             poster={heroPosterUrl}
             autoPlay
             muted
@@ -218,7 +218,7 @@ function Index() {
             <source src={heroWebmUrl} type="video/webm" />
             <source src={heroVideoUrl} type="video/mp4" />
           </video>
-          <img src={heroEndUrl} alt="" className="hidden h-full w-full object-cover motion-reduce:block" />
+          <img src={heroEndUrl} alt="" className="hidden h-full w-full object-cover object-[75%_center] motion-reduce:block" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/35 to-navy/0" aria-hidden />
         <div className="relative mx-auto w-full max-w-6xl px-5 pt-24">
