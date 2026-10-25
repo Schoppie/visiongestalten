@@ -15,4 +15,4 @@
 - [x] Schmetterlinge im Header-Video langsamer abspielen
 - [x] Header-Video: goldene Triangel-Nadeln fallen auf blauen Grund
 - [x] Neues Eyke-Foto in der Grafik-Karte (ohne Flaschen, geschärft, blau eingefärbt)
-- [ ] Eykes Gesicht im Kartenfoto etwas schlanker
+- [x] Eykes Gesicht im Kartenfoto etwas schlanker
