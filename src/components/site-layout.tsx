@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { Mail, MapPin, Menu, Phone, X } from "lucide-react";
+import { Instagram, Mail, MapPin, Menu, Phone, X } from "lucide-react";
+import { INSTAGRAM_URL } from "@/content/seo";
 import { CONTACT, SERVICE_LINKS } from "@/content/site";
 
 const BRAND = "Global Triangle";
@@ -164,6 +165,16 @@ export function SiteFooter() {
             <li>
               <a href={`mailto:${CONTACT.email}`} className="flex gap-2.5 transition-colors hover:text-gold">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" /> {CONTACT.email}
+              </a>
+            </li>
+            <li>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-2.5 transition-colors hover:text-gold"
+              >
+                <Instagram className="mt-0.5 h-4 w-4 shrink-0 text-gold" /> @global.triangle.de
               </a>
             </li>
           </ul>

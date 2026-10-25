@@ -14,12 +14,13 @@ import {
   MapPin,
   Star,
   BrainCircuit,
+  Instagram,
 } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { Brand, Logo, SiteFooter } from "@/components/site-layout";
 import { ContactForm } from "@/components/contact-form";
 import { CONTACT } from "@/content/site";
-import { businessJsonLd, pageHead, GOOGLE_REVIEW_URL } from "@/content/seo";
+import { businessJsonLd, pageHead, GOOGLE_REVIEW_URL, INSTAGRAM_URL } from "@/content/seo";
 
 import heroVideoUrl from "@/assets/gt/hero-pins.mp4";
 import heroWebmUrl from "@/assets/gt/hero-pins.webm";
@@ -412,6 +413,14 @@ function Index() {
                   {CONTACT.street}, {CONTACT.city}
                 </span>
               </li>
+              <li className="flex items-center gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-gold">
+                  <Instagram className="h-4 w-4" />
+                </span>
+                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-gold">
+                  @global.triangle.de
+                </a>
+              </li>
             </ul>
             <div className="mt-10 rounded-2xl border border-border bg-card p-6 shadow-soft">
               <p className="flex items-center gap-1 text-gold" aria-hidden>
@@ -430,6 +439,24 @@ function Index() {
                 className="mt-5 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 font-medium text-accent-foreground shadow-soft transition-transform hover:-translate-y-0.5"
               >
                 Jetzt bei Google bewerten <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+            <div className="mt-6 rounded-2xl border border-border bg-navy p-6 text-navy-foreground shadow-soft">
+              <p className="flex items-center gap-2 text-gold">
+                <Instagram className="h-6 w-6" />
+                <span className="eyebrow">Instagram</span>
+              </p>
+              <p className="mt-3 text-lg font-medium">Folge uns auf Instagram</p>
+              <p className="mt-1 text-navy-foreground/75">
+                Neue Projekte, Plakate und Einblicke hinter die Kulissen – direkt aus Itzehoe.
+              </p>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 font-medium text-accent-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+              >
+                @global.triangle.de <ArrowRight className="h-4 w-4" />
               </a>
             </div>
           </div>
