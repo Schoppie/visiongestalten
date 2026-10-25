@@ -21,9 +21,10 @@ import { ContactForm } from "@/components/contact-form";
 import { CONTACT } from "@/content/site";
 import { businessJsonLd, pageHead, GOOGLE_REVIEW_URL } from "@/content/seo";
 
-import heroVideoUrl from "@/assets/gt/hero.mp4";
-import heroWebmUrl from "@/assets/gt/hero.webm";
-import heroPosterUrl from "@/assets/gt/hero-poster.jpg";
+import heroVideoUrl from "@/assets/gt/hero-pins.mp4";
+import heroWebmUrl from "@/assets/gt/hero-pins.webm";
+import heroPosterUrl from "@/assets/gt/hero-pins-start.jpg";
+import heroEndUrl from "@/assets/gt/hero-pins-end.jpg";
 import iraRoundUrl from "@/assets/gt/ira_round.png";
 import eykeRoundUrl from "@/assets/gt/eyke_round.png";
 import tonjaRoundUrl from "@/assets/gt/tonja_round.png";
@@ -210,16 +211,16 @@ function Index() {
             poster={heroPosterUrl}
             autoPlay
             muted
-            loop
             playsInline
             preload="auto"
           >
+            {/* Plays once: the golden pins fall and stay on the blue surface. */}
             <source src={heroWebmUrl} type="video/webm" />
             <source src={heroVideoUrl} type="video/mp4" />
           </video>
-          <img src={heroPosterUrl} alt="" className="hidden h-full w-full object-cover motion-reduce:block" />
+          <img src={heroEndUrl} alt="" className="hidden h-full w-full object-cover motion-reduce:block" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/85 via-navy/60 to-navy/85" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy/80 via-navy/45 to-navy/75" aria-hidden />
         <div className="relative mx-auto w-full max-w-6xl px-5 pt-24">
           <div className="max-w-2xl reveal">
             <h1>
