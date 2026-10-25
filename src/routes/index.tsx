@@ -29,7 +29,7 @@ import iraRoundUrl from "@/assets/gt/ira_round.png";
 import eykeRoundUrl from "@/assets/gt/eyke_round.png";
 import tonjaRoundUrl from "@/assets/gt/tonja_round.png";
 import iraImgUrl from "@/assets/gt/ira.jpg";
-import eykeImgUrl from "@/assets/gt/eyke-hd.jpg";
+import eykeImgUrl from "@/assets/gt/eyke-team.jpg";
 import tonjaImgUrl from "@/assets/gt/tonja.jpg";
 
 // The video file itself is already slowed down (2.5x, with smooth in-between frames).
