@@ -22,5 +22,5 @@
 - [x] Ira-Foto schärfen; Ira als KI-Expertin (Gemini & Copilot) statt Business-Coachin
 - [x] ChatGPT in Iras KI-Liste; Ira-Foto (Kinn) unverändert lassen
 - [x] WhatsApp-Logo feiner (Linien wie Logo oben links)
-- [ ] Visitenkarten für Ira, Tonja, Eyke (wartet auf Kontaktdaten)
-- [ ] Adresse im Impressum (wartet auf Entscheidung)
+- [x] Visitenkarten für Ira, Tonja, Eyke (gemeinsame Kontaktdaten; eigene Nummern/E-Mails nachtragen, falls gewünscht)
+- [ ] Adresse im Impressum – wartet auf Entscheidung (Impressum braucht ladungsfähige Anschrift)
