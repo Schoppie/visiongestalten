@@ -13,3 +13,6 @@
 - [x] Search Console (bereits angemeldet) prüfen und Sitemap einreichen
 - [ ] Galerie-Seite – wartet auf die Originalfotos (im Webarchiv nicht gesichert)
 - [x] Schmetterlinge im Header-Video langsamer abspielen
+- [x] Header-Video: goldene Triangel-Nadeln fallen auf blauen Grund
+- [x] Neues Eyke-Foto in der Grafik-Karte (ohne Flaschen, geschärft, blau eingefärbt)
+- [ ] Eykes Gesicht im Kartenfoto etwas schlanker
