@@ -35,11 +35,6 @@ export const Route = createFileRoute("/referenzen")({
 
 // Kundenliste der bisherigen Referenzen-Seite.
 const REFERENCES: { name: string; tag: string; url?: string; img?: string }[] = [
-  {
-    name: "Kiddy Kommode",
-    tag: "Gestaltung",
-    url: "https://www.11880.com/branchenbuch/itzehoe/181142902B102152514/kiddy-kommode-heike-paulsen.html",
-  },
   { name: "Kamilla Medizinische Fußpflege", tag: "Gestaltung", url: "https://kamilla-medizinische-fusspflege.de/", img: img_kamilla },
   { name: "SCI Itzehoe – Schwimmschule", tag: "Gestaltung", url: "https://sport-club-itzehoe.de/sportarten/schwimmschule/", img: img_sci },
   { name: "Physiotherapie Hinrichs", tag: "Webdesign", url: "https://www.physiotherapie-hinrichs.de/", img: img_hinrichs },
@@ -49,6 +44,11 @@ const REFERENCES: { name: string; tag: string; url?: string; img?: string }[] = 
   { name: "Rednerservice Seifert", tag: "Webdesign", url: "https://rednerservice-seifert.de/", img: img_seifert },
   { name: "Matthias Menzel", tag: "Webdesign", url: "https://matthiasmenzel.de/", img: img_menzel },
   { name: "Anke Fricke", tag: "Webdesign", url: "https://anke-fricke.de/", img: img_fricke },
+  {
+    name: "Kiddy Kommode",
+    tag: "Gestaltung",
+    url: "https://www.11880.com/branchenbuch/itzehoe/181142902B102152514/kiddy-kommode-heike-paulsen.html",
+  },
 ];
 
 function ReferenzenPage() {
