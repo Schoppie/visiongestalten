@@ -87,10 +87,7 @@ export const SERVICES: ServiceContent[] = [
     references: {
       intro:
         "Ein starker Verbund und eine gute Zusammenarbeit zeichnen Global Triangle aus. Gemeinsam mit Eyke und Tonja – oder auch mit jedem von uns einzeln – kannst du erfolgreich zusammenarbeiten, um deine Ziele zu erreichen und dein Geschäft weiter auszubauen.",
-      items: [
-        { name: "Horsess", text: "Pferdetrainerin" },
-        { name: "Forensic Training Partnership", text: "Forensic Training Partnership" },
-      ],
+      items: [],
     },
   },
   {
@@ -145,6 +142,7 @@ export const SERVICES: ServiceContent[] = [
     intro: [
       "Deine Bilder sind mehr als nur Fotos – sie sind das Aushängeschild deines Unternehmens. Mein Ziel ist es, dein Image authentisch widerzuspiegeln und genau die Kunden anzulocken, die zu dir passen.",
       "Deshalb biete ich professionelle, branchenübergreifende Fotografie in Itzehoe und Umgebung an, die dich und dein Business optimal in Szene setzt.",
+      "Neben der Fotografie gehört auch Forensic Training Partnership zu meinen Unternehmen.",
     ],
     image: tonjaImgUrl,
     imageAlt: "Tonja Fritz-Johnson – Fotografin für Business-Fotos in Itzehoe",
