@@ -16,3 +16,5 @@
 - [x] Header-Video: goldene Triangel-Nadeln fallen auf blauen Grund
 - [x] Neues Eyke-Foto in der Grafik-Karte (ohne Flaschen, geschärft, blau eingefärbt)
 - [x] Eykes Gesicht im Kartenfoto etwas schlanker
+- [x] Header-Video: Flimmern der Nadeln beheben
+- [ ] Header-Video: keine Nadeln hinter der Schrift (nur rechte Seite)
