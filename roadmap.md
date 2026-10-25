@@ -21,3 +21,6 @@
 - [x] Team-Foto Eyke (Sofa): neues Gesicht mit Brille, kürzere Haare, Hand weg, Person kleiner wie Ira/Tonja
 - [x] Ira-Foto schärfen; Ira als KI-Expertin (Gemini & Copilot) statt Business-Coachin
 - [x] ChatGPT in Iras KI-Liste; Ira-Foto (Kinn) unverändert lassen
+- [x] WhatsApp-Logo feiner (Linien wie Logo oben links)
+- [ ] Visitenkarten für Ira, Tonja, Eyke (wartet auf Kontaktdaten)
+- [ ] Adresse im Impressum (wartet auf Entscheidung)
