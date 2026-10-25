@@ -46,6 +46,7 @@ export const SERVICES: ServiceContent[] = [
     highlightsTitle: "Mein KI-Coaching umfasst",
     highlights: [
       "Google Gemini",
+      "ChatGPT",
       "Microsoft Copilot",
       "Einzelcoaching",
       "Teamschulungen",
