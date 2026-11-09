@@ -1,6 +1,6 @@
 // Texte der drei Themen-Seiten – übernommen von der bisherigen global-triangle.de.
 import iraImgUrl from "@/assets/gt/ira-hd.jpg";
-import eykeImgUrl from "@/assets/gt/eyke-hd.jpg";
+import eykeImgUrl from "@/assets/gt/eyke-team.jpg";
 import tonjaImgUrl from "@/assets/gt/tonja.jpg";
 import { breadcrumbJsonLd, pageHead, serviceJsonLd } from "@/content/seo";
 
