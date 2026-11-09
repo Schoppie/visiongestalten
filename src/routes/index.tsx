@@ -49,7 +49,7 @@ export const Route = createFileRoute("/")({
       path: "/",
       title: "Werbeagentur Itzehoe – Webdesign, KI-Coaching & Fotografie | Global Triangle",
       description:
-        "Global Triangle ist deine Werbeagentur in Itzehoe: Webdesign & Grafik, KI-Coaching mit Gemini, ChatGPT und Copilot und Fotografie aus einer Hand – für Gründer und Unternehmen im Kreis Steinburg.",
+        "Global Triangle ist deine Werbeagentur in Itzehoe: Webdesign & Grafik, KI-Beratung & KI-Coaching mit Microsoft Copilot und Fotografie aus einer Hand – für Gründer und Unternehmen im Kreis Steinburg.",
       jsonLd: [businessJsonLd()],
     }),
   component: Index,
@@ -69,9 +69,9 @@ const LEISTUNGEN = [
     icon: BrainCircuit,
     to: "/business-coaching" as const,
     image: iraRound,
-    title: "KI-Coaching",
-    alt: "Ira Köhnke – KI-Expertin und KI-Coaching in Itzehoe",
-    text: "Als KI-Expertin zeige ich dir, wie du künstliche Intelligenz sinnvoll in deinem Arbeitsalltag einsetzt – vor allem Google Gemini, ChatGPT und Microsoft Copilot. Praxisnah, verständlich und genau auf deine Aufgaben zugeschnitten.",
+    title: "KI-Beratung & Coaching",
+    alt: "Ira Köhnke – KI-Beratung und KI-Coaching in Itzehoe",
+    text: "Entdecke, wie künstliche Intelligenz dich im Arbeitsalltag unterstützen kann. Ich zeige dir passende Einsatzmöglichkeiten, führe dich in KI-Werkzeuge ein und begleite dich bis zur sicheren eigenen Anwendung – mit Schwerpunkt auf Microsoft Copilot.",
   },
   {
     icon: PenTool,
@@ -94,9 +94,9 @@ const LEISTUNGEN = [
 const TEAM = [
   {
     name: "Ira Köhnke",
-    role: "KI-Expertin",
+    role: "KI-Beratung & Coaching",
     image: iraImg,
-    text: "Ira ist unsere KI-Expertin. Sie zeigt dir Schritt für Schritt, wie du Google Gemini, ChatGPT und Microsoft Copilot im Alltag nutzt – damit du Zeit sparst und mehr aus deinem Business herausholst.",
+    text: "Ira ist zertifizierte AI-Managerin. Sie zeigt dir Schritt für Schritt, wie du KI – zum Beispiel Microsoft Copilot – im Arbeitsalltag nutzt: von ersten Fragen über klare Anweisungen bis zu Ergebnissen, die du sicher prüfen kannst.",
   },
   {
     name: "Eyke Szopieray",
@@ -233,8 +233,8 @@ function Index() {
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-foreground/85">
-              <Brand /> ist keine klassische Werbeagentur. KI-Coaching, Grafik &
-              Webdesign und Fotografie in Itzehoe – aus einer Hand. Mit uns startest du dein
+              <Brand /> ist keine klassische Werbeagentur. KI-Beratung &
+              Coaching, Grafik & Webdesign und Fotografie in Itzehoe – aus einer Hand. Mit uns startest du dein
               Business erfolgreich oder baust es weiter aus.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
@@ -311,7 +311,7 @@ function Index() {
           <div className="reveal overflow-hidden rounded-3xl shadow-lift">
             <img
               src={iraImg.url}
-              alt="Ira Köhnke von Global Triangle – KI-Expertin und KI-Coaching in Itzehoe"
+              alt="Ira Köhnke von Global Triangle – KI-Beratung und KI-Coaching in Itzehoe"
               className="h-full w-full object-cover"
               loading="lazy"
             />

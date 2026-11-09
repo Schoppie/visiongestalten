@@ -19,6 +19,11 @@ export function ServicePage({ service: s }: { service: ServiceContent }) {
               <span className="eyebrow block text-gold">{s.eyebrow}</span>
               <span className="mt-4 block text-5xl font-medium leading-[1.05] sm:text-7xl">{s.title}</span>
             </h1>
+            {s.tagline && (
+              <p className="mt-5 max-w-xl font-display text-3xl leading-snug text-navy-foreground sm:text-4xl">
+                {s.tagline}
+              </p>
+            )}
             <div className="mt-6 max-w-2xl space-y-4 text-lg leading-relaxed text-navy-foreground/85">
               {s.intro.map((p) => (
                 <p key={p}>{withBrand(p)}</p>
@@ -30,7 +35,7 @@ export function ServicePage({ service: s }: { service: ServiceContent }) {
                 hash="kontakt"
                 className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3 font-medium text-accent-foreground shadow-soft transition-transform hover:-translate-y-0.5"
               >
-                Kostenfreies Analyse-Gespräch <ArrowRight className="h-4 w-4" />
+                {s.ctaLabel ?? "Kostenfreies Analyse-Gespräch"} <ArrowRight className="h-4 w-4" />
               </Link>
               <a
                 href={CONTACT.phoneHref}
@@ -57,53 +62,61 @@ export function ServicePage({ service: s }: { service: ServiceContent }) {
       </section>
 
       {/* Body + highlights */}
-      <section className="py-20 sm:py-24">
-        <div className="mx-auto grid max-w-6xl gap-14 px-5 md:grid-cols-[1.15fr_0.85fr]">
-          <div className="reveal">
-            <h2 className="text-4xl font-medium sm:text-5xl">{s.bodyTitle}</h2>
-            <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
-              {s.body.map((p) => (
-                <p key={p}>{withBrand(p)}</p>
-              ))}
+      {s.body && s.body.length > 0 && (
+        <section className="py-20 sm:py-24">
+          <div
+            className={`mx-auto grid max-w-6xl gap-14 px-5 ${
+              s.highlights && s.highlights.length > 0 ? "md:grid-cols-[1.15fr_0.85fr]" : ""
+            }`}
+          >
+            <div className="reveal">
+              {s.bodyTitle && <h2 className="text-4xl font-medium sm:text-5xl">{s.bodyTitle}</h2>}
+              <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
+                {s.body.map((p) => (
+                  <p key={p}>{withBrand(p)}</p>
+                ))}
+              </div>
+              {s.quote && (
+                <figure className="mt-10 border-l-2 border-gold pl-6">
+                  <Quote className="h-6 w-6 text-gold" />
+                  <blockquote className="mt-3 font-display text-2xl italic leading-snug sm:text-3xl">
+                    „{s.quote}“
+                  </blockquote>
+                  <figcaption className="eyebrow mt-3 text-muted-foreground">— {s.person.name}</figcaption>
+                </figure>
+              )}
+              {s.extraLink && (
+                <p className="mt-8 text-lg text-muted-foreground">
+                  {s.extraLink.text}{" "}
+                  <a
+                    href={s.extraLink.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 font-medium text-foreground underline decoration-gold underline-offset-4"
+                  >
+                    {s.extraLink.label} <ExternalLink className="h-4 w-4" />
+                  </a>
+                </p>
+              )}
             </div>
-            {s.quote && (
-              <figure className="mt-10 border-l-2 border-gold pl-6">
-                <Quote className="h-6 w-6 text-gold" />
-                <blockquote className="mt-3 font-display text-2xl italic leading-snug sm:text-3xl">
-                  „{s.quote}“
-                </blockquote>
-                <figcaption className="eyebrow mt-3 text-muted-foreground">— {s.person.name}</figcaption>
-              </figure>
-            )}
-            {s.extraLink && (
-              <p className="mt-8 text-lg text-muted-foreground">
-                {s.extraLink.text}{" "}
-                <a
-                  href={s.extraLink.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 font-medium text-foreground underline decoration-gold underline-offset-4"
-                >
-                  {s.extraLink.label} <ExternalLink className="h-4 w-4" />
-                </a>
-              </p>
+            {s.highlights && s.highlights.length > 0 && (
+              <aside className="reveal h-fit rounded-2xl border border-border bg-card p-8 shadow-soft">
+                <p className="eyebrow text-gold">{s.highlightsTitle}</p>
+                <ul className="mt-6 space-y-4">
+                  {s.highlights.map((h) => (
+                    <li key={h} className="flex gap-3 text-lg">
+                      <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold text-accent-foreground">
+                        <Check className="h-4 w-4" />
+                      </span>
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              </aside>
             )}
           </div>
-          <aside className="reveal h-fit rounded-2xl border border-border bg-card p-8 shadow-soft">
-            <p className="eyebrow text-gold">{s.highlightsTitle}</p>
-            <ul className="mt-6 space-y-4">
-              {s.highlights.map((h) => (
-                <li key={h} className="flex gap-3 text-lg">
-                  <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold text-accent-foreground">
-                    <Check className="h-4 w-4" />
-                  </span>
-                  {h}
-                </li>
-              ))}
-            </ul>
-          </aside>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Topics */}
       {s.topics && (
@@ -123,6 +136,7 @@ export function ServicePage({ service: s }: { service: ServiceContent }) {
                 >
                   <span className="font-display text-4xl text-gold">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="mt-3 text-2xl font-semibold">{t.title}</h3>
+                  {t.subtitle && <p className="mt-2 font-medium text-foreground">{t.subtitle}</p>}
                   <p className="mt-3 leading-relaxed text-muted-foreground">{t.text}</p>
                 </article>
               ))}
@@ -142,6 +156,28 @@ export function ServicePage({ service: s }: { service: ServiceContent }) {
                 <p key={p}>{withBrand(p)}</p>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Closing call-to-action */}
+      {s.cta && (
+        <section className="bg-navy py-20 text-navy-foreground sm:py-24">
+          <div className="reveal mx-auto max-w-3xl px-5 text-center">
+            <h2 className="text-4xl font-medium sm:text-5xl">{s.cta.title}</h2>
+            {s.cta.intro && <p className="mt-4 font-display text-2xl text-gold">{s.cta.intro}</p>}
+            <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-foreground/85">
+              {s.cta.text.map((p) => (
+                <p key={p}>{withBrand(p)}</p>
+              ))}
+            </div>
+            <Link
+              to="/"
+              hash="kontakt"
+              className="mt-9 inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3 font-medium text-accent-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+            >
+              {s.cta.button} <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </section>
       )}

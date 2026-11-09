@@ -8,6 +8,8 @@ export interface ServiceContent {
   slug: "/business-coaching" | "/grafik-webdesign-itzehoe" | "/fotografie";
   eyebrow: string;
   title: string;
+  /** Sub-headline under the page title. */
+  tagline?: string;
   metaTitle: string;
   metaDescription: string;
   intro: string[];
@@ -16,78 +18,96 @@ export interface ServiceContent {
   imagePosition?: string;
   person: { name: string; role: string };
   quote?: string;
-  highlightsTitle: string;
-  highlights: string[];
-  bodyTitle: string;
-  body: string[];
-  topics?: { title: string; intro?: string; items: { title: string; text: string }[] };
+  /** Label of the call-to-action button in the intro. */
+  ctaLabel?: string;
+  highlightsTitle?: string;
+  highlights?: string[];
+  bodyTitle?: string;
+  body?: string[];
+  topics?: {
+    title: string;
+    intro?: string;
+    items: { title: string; subtitle?: string; text: string }[];
+  };
   about?: { title: string; paragraphs: string[] };
   references?: { intro: string; items: { name: string; text: string }[] };
   extraLink?: { href: string; label: string; text: string };
+  /** Closing call-to-action block before the references. */
+  cta?: { title: string; intro?: string; text: string[]; button: string };
 }
 
 export const SERVICES: ServiceContent[] = [
   {
     slug: "/business-coaching",
-    eyebrow: "KI-Coaching in Itzehoe",
-    title: "KI-Coaching",
-    metaTitle: "KI-Coaching Itzehoe – Gemini & Copilot mit Ira Köhnke | Global Triangle",
+    eyebrow: "KI-Beratung & Coaching in Itzehoe",
+    title: "KI-Beratung & Coaching",
+    tagline: "KI verstehen. Möglichkeiten erkennen. Einfach anwenden.",
+    metaTitle: "KI-Beratung & KI-Coaching Itzehoe – Copilot mit Ira Köhnke | Global Triangle",
     metaDescription:
-      "KI-Coaching in Itzehoe mit KI-Expertin Ira Köhnke: Lerne Google Gemini und Microsoft Copilot sicher im Arbeitsalltag zu nutzen – einzeln, im Team oder online.",
+      "KI-Beratung und KI-Coaching in Itzehoe mit Ira Köhnke: Microsoft Copilot und weitere KI-Werkzeuge sinnvoll im Arbeitsalltag einsetzen – einzeln, im Team oder online.",
     intro: [
-      "Künstliche Intelligenz kann dir jeden Tag Zeit sparen – wenn du weißt, wie du sie richtig einsetzt. Als KI-Expertin zeige ich dir, wie das geht.",
-      "Mein Schwerpunkt liegt auf Google Gemini und Microsoft Copilot: Ich begleite dich von den ersten Schritten bis zum sicheren Einsatz in deinem Unternehmen.",
+      "Entdecke, wie künstliche Intelligenz dich im Arbeitsalltag unterstützen kann. Ich begleite dich dabei, passende Einsatzmöglichkeiten zu finden, KI-Werkzeuge kennenzulernen und sie selbstständig anzuwenden.",
+      "Du möchtest künstliche Intelligenz nutzen, weißt aber nicht, wo du anfangen sollst? Oder du hast bereits erste Erfahrungen gesammelt und möchtest bessere Ergebnisse erzielen?",
+      "Ich unterstütze dich dabei, KI sinnvoll in deinen Arbeitsalltag einzubinden. Gemeinsam betrachten wir deine Aufgaben und finden heraus, wo KI hilfreich sein kann und wo ihre Grenzen liegen.",
+      "Mein Schwerpunkt liegt auf der praktischen Anwendung von Microsoft Copilot und weiteren KI-Werkzeugen. Du brauchst keine technischen Vorkenntnisse, sondern nur die Bereitschaft, Neues auszuprobieren.",
     ],
     image: iraImgUrl,
-    imageAlt: "Ira Köhnke – KI-Expertin und KI-Coaching in Itzehoe",
-    person: { name: "Ira Köhnke", role: "KI-Expertin" },
-    quote:
-      "Ich möchte mein Wissen an dich weitergeben, damit KI für dich zum echten Helfer wird – im Beruf und im Alltag.",
-    highlightsTitle: "Mein KI-Coaching umfasst",
-    highlights: [
-      "Google Gemini",
-      "ChatGPT",
-      "Microsoft Copilot",
-      "Einzelcoaching",
-      "Teamschulungen",
-      "Online-Coaching",
-    ],
-    bodyTitle: "Erfahrung, die dich weiterbringt",
-    body: [
-      "Durch meine langjährige Tätigkeit habe ich ein breites Wissen im Strukturaufbau, in der Projektplanung und in der Prozessoptimierung erworben – genau dort, wo KI heute am meisten bewirkt.",
-      "Ich kenne die Abläufe in Start-ups ebenso wie in Großunternehmen und weiß, wo KI-Werkzeuge wirklich helfen und wo nicht.",
-      "Gemeinsam finden wir heraus, welche Aufgaben du an Gemini oder Copilot abgeben kannst, damit dir mehr Zeit für das Wesentliche bleibt.",
-    ],
+    imageAlt: "Ira Köhnke – KI-Beratung und KI-Coaching in Itzehoe",
+    person: { name: "Ira Köhnke", role: "KI-Beratung & Coaching" },
+    ctaLabel: "Kostenfreies Erstgespräch vereinbaren",
     topics: {
-      title: "Wir schauen gemeinsam, wo KI dir hilft",
-      intro: "Was erwartet dich in meinem KI-Coaching:",
+      title: "Meine Angebote",
       items: [
         {
-          title: "Einstieg in Gemini und Copilot",
-          text: "Du lernst die Werkzeuge kennen, richtest sie ein und machst deine ersten Schritte – ganz ohne Vorkenntnisse.",
+          title: "Individuelle KI-Beratung",
+          subtitle: "Finde heraus, was zu deinem Unternehmen passt.",
+          text: "Wir betrachten deine täglichen Aufgaben und entwickeln konkrete Ideen für den Einsatz von KI. Ob Texte, Recherche, Informationsaufbereitung oder Wissensmanagement: Im Mittelpunkt stehen deine Anforderungen, nicht das Werkzeug. Gemeinsam legen wir fest, welche Anwendungen du ausprobieren möchtest und wie du sinnvoll starten kannst.",
         },
         {
-          title: "Die richtigen Fragen stellen",
-          text: "Mit guten Anweisungen (Prompts) bekommst du von der KI genau die Ergebnisse, die du brauchst.",
+          title: "Persönliches KI-Coaching",
+          subtitle: "Lerne direkt an deinen eigenen Aufgaben.",
+          text: "Im Coaching arbeiten wir mit Beispielen aus deinem Alltag. Du lernst, klare Anweisungen für die KI zu formulieren, Ergebnisse zu verbessern und Antworten kritisch zu prüfen. So entwickelst du hilfreiche Vorlagen und mehr Sicherheit im Umgang mit KI.",
         },
         {
-          title: "Texte, E-Mails und Präsentationen",
-          text: "Lass dir von der KI beim Schreiben, Zusammenfassen und Gestalten helfen – in Word, Outlook, PowerPoint, Gmail und Google Docs.",
+          title: "Microsoft Copilot im Arbeitsalltag",
+          subtitle: "Von ersten Fragen zur praktischen Anwendung.",
+          text: "Du möchtest Microsoft Copilot besser kennenlernen oder gezielter nutzen? Ich begleite dich mit verständlichen Erklärungen und praktischen Übungen. Wir orientieren uns an deinen Aufgaben und den Anwendungen, die dir zur Verfügung stehen.",
         },
         {
-          title: "Abläufe vereinfachen",
-          text: "Wir finden wiederkehrende Aufgaben in deinem Unternehmen, die KI dir abnehmen oder beschleunigen kann.",
+          title: "KI-Workshops für kleine Teams",
+          subtitle: "Gemeinsam lernen und ausprobieren.",
+          text: "In praxisnahen Workshops erhält dein Team einen verständlichen Einstieg in die Arbeit mit KI. Wir üben mit typischen Aufgaben, entwickeln klare Anweisungen und besprechen, wie Ergebnisse geprüft werden können. Die Inhalte richten sich nach eurem Kenntnisstand und euren Zielen.",
         },
         {
-          title: "Sicher und verantwortungsvoll",
-          text: "Was darfst du der KI anvertrauen? Wir klären Datenschutz, Grenzen und den sinnvollen Umgang mit Ergebnissen.",
+          title: "Bewusst und verantwortungsvoll mit KI arbeiten",
+          subtitle: "Nicht jede Aufgabe eignet sich für KI. Und nicht jede Antwort ist richtig.",
+          text: "Deshalb gehören der Umgang mit vertraulichen Informationen, das Prüfen von Ergebnissen und das Erkennen von Grenzen zu meiner Beratung. Ziel ist ein bewusster Einsatz, bei dem du die Kontrolle behältst.",
         },
+      ],
+    },
+    about: {
+      title: "Ira Köhnke | KI-Beratung & Coaching",
+      paragraphs: [
+        "Ich verbinde Erfahrung in digitalen Prozessen und Schulungen mit der praktischen Anwendung von künstlicher Intelligenz.",
+        "Als zertifizierte AI-Managerin arbeite ich mit Microsoft Copilot und Microsoft 365. In meinem beruflichen Alltag unterstütze ich Kolleginnen und Kollegen bei der Nutzung von KI, entwickle Vorlagen und begleite Schulungen und Workshops.",
+        "Diese Erfahrung bringe ich in meine Beratung ein. Mir ist wichtig, komplizierte Themen verständlich zu erklären und gemeinsam Lösungen zu entwickeln, die zu deinen Aufgaben passen.",
+        "Mein Anspruch: Du sollst KI nicht nur kennenlernen, sondern sinnvoll und selbstständig anwenden können.",
       ],
     },
     references: {
       intro:
         "Ein starker Verbund und eine gute Zusammenarbeit zeichnen Global Triangle aus. Gemeinsam mit Eyke und Tonja – oder auch mit jedem von uns einzeln – kannst du erfolgreich zusammenarbeiten, um deine Ziele zu erreichen und dein Geschäft weiter auszubauen.",
       items: [],
+    },
+    cta: {
+      title: "Dein Einstieg in die KI-Beratung",
+      intro: "Lass uns über deine Möglichkeiten sprechen.",
+      text: [
+        "Du möchtest wissen, ob und wie KI dich unterstützen kann?",
+        "In einem kostenfreien Erstgespräch sprechen wir über deine Aufgaben, Fragen und Ziele. Gemeinsam klären wir, welche Unterstützung zu dir passt.",
+        "Du brauchst weder technisches Vorwissen noch eine fertige Idee.",
+      ],
+      button: "Kostenfreies Erstgespräch vereinbaren",
     },
   },
   {
