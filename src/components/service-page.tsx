@@ -160,6 +160,28 @@ export function ServicePage({ service: s }: { service: ServiceContent }) {
         </section>
       )}
 
+      {/* Closing call-to-action */}
+      {s.cta && (
+        <section className="bg-navy py-20 text-navy-foreground sm:py-24">
+          <div className="reveal mx-auto max-w-3xl px-5 text-center">
+            <h2 className="text-4xl font-medium sm:text-5xl">{s.cta.title}</h2>
+            {s.cta.intro && <p className="mt-4 font-display text-2xl text-gold">{s.cta.intro}</p>}
+            <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-foreground/85">
+              {s.cta.text.map((p) => (
+                <p key={p}>{withBrand(p)}</p>
+              ))}
+            </div>
+            <Link
+              to="/"
+              hash="kontakt"
+              className="mt-9 inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3 font-medium text-accent-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+            >
+              {s.cta.button} <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </section>
+      )}
+
       {/* References */}
       <section className="py-20 sm:py-24">
         <div className="mx-auto max-w-6xl px-5">

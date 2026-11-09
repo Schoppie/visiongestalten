@@ -10,7 +10,7 @@ export const CONTACT = {
 };
 
 export const SERVICE_LINKS = [
-  { to: "/business-coaching", label: "KI-Coaching" },
+  { to: "/business-coaching", label: "KI-Beratung & Coaching" },
   { to: "/grafik-webdesign-itzehoe", label: "Grafik & Webdesign" },
   { to: "/fotografie", label: "Fotografie" },
 ] as const;
