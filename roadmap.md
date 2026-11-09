@@ -25,4 +25,4 @@
 - [x] Visitenkarten für Ira, Tonja, Eyke (gemeinsame Kontaktdaten; eigene Nummern/E-Mails nachtragen, falls gewünscht)
 - [x] Ira-Texte ersetzen: KI-Beratung & Coaching (5 Angebote, Über mich als AI-Managerin, kostenfreies Erstgespräch)
 - [ ] Adresse im Impressum – wartet auf Entscheidung (Impressum braucht ladungsfähige Anschrift)
-- [ ] Google-Profil-Beschreibung nennt Ira noch "Business Coaching" – wartet auf Zustimmung
+- [x] Google-Profil-Beschreibung: Ira jetzt "zertifizierte AI-Managerin" mit KI-Beratung & KI-Coaching (Copilot)
