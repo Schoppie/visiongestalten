@@ -31,7 +31,7 @@ import eykeRoundUrl from "@/assets/gt/eyke_round.png";
 import tonjaRoundUrl from "@/assets/gt/tonja_round.png";
 import iraImgUrl from "@/assets/gt/ira-hd.jpg";
 import eykeImgUrl from "@/assets/gt/eyke-team.jpg";
-import tonjaImgUrl from "@/assets/gt/tonja-sharp.jpg";
+import tonjaImgUrl from "@/assets/gt/tonja.jpg";
 
 // The video file itself is already slowed down (2.5x, with smooth in-between frames).
 const HERO_PLAYBACK_RATE = 1;
