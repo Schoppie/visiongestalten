@@ -1,7 +1,7 @@
 # Roadmap – Global Triangle
 
 - [x] Tonjas Originalfoto wiederherstellen (KI-Nachschärfung verworfen)
-- [ ] Aktuelles Dreieck-Logo als transparente PNG-Dateien in Gelb und Blau zum Download
+- [x] Aktuelles Dreieck-Logo als transparente PNG-Dateien in Gelb und Blau zum Download
 - [x] Eykes Unterseitenfotos auf das vorhandene Startseitenfoto mit Brille umstellen
 
 - [x] Alte Unterseiten übernehmen: Coaching, Grafik & Webdesign, Fotografie (alte Adressen beibehalten)
