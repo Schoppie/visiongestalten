@@ -62,53 +62,61 @@ export function ServicePage({ service: s }: { service: ServiceContent }) {
       </section>
 
       {/* Body + highlights */}
-      <section className="py-20 sm:py-24">
-        <div className="mx-auto grid max-w-6xl gap-14 px-5 md:grid-cols-[1.15fr_0.85fr]">
-          <div className="reveal">
-            <h2 className="text-4xl font-medium sm:text-5xl">{s.bodyTitle}</h2>
-            <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
-              {s.body.map((p) => (
-                <p key={p}>{withBrand(p)}</p>
-              ))}
+      {s.body && s.body.length > 0 && (
+        <section className="py-20 sm:py-24">
+          <div
+            className={`mx-auto grid max-w-6xl gap-14 px-5 ${
+              s.highlights && s.highlights.length > 0 ? "md:grid-cols-[1.15fr_0.85fr]" : ""
+            }`}
+          >
+            <div className="reveal">
+              {s.bodyTitle && <h2 className="text-4xl font-medium sm:text-5xl">{s.bodyTitle}</h2>}
+              <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
+                {s.body.map((p) => (
+                  <p key={p}>{withBrand(p)}</p>
+                ))}
+              </div>
+              {s.quote && (
+                <figure className="mt-10 border-l-2 border-gold pl-6">
+                  <Quote className="h-6 w-6 text-gold" />
+                  <blockquote className="mt-3 font-display text-2xl italic leading-snug sm:text-3xl">
+                    „{s.quote}“
+                  </blockquote>
+                  <figcaption className="eyebrow mt-3 text-muted-foreground">— {s.person.name}</figcaption>
+                </figure>
+              )}
+              {s.extraLink && (
+                <p className="mt-8 text-lg text-muted-foreground">
+                  {s.extraLink.text}{" "}
+                  <a
+                    href={s.extraLink.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 font-medium text-foreground underline decoration-gold underline-offset-4"
+                  >
+                    {s.extraLink.label} <ExternalLink className="h-4 w-4" />
+                  </a>
+                </p>
+              )}
             </div>
-            {s.quote && (
-              <figure className="mt-10 border-l-2 border-gold pl-6">
-                <Quote className="h-6 w-6 text-gold" />
-                <blockquote className="mt-3 font-display text-2xl italic leading-snug sm:text-3xl">
-                  „{s.quote}“
-                </blockquote>
-                <figcaption className="eyebrow mt-3 text-muted-foreground">— {s.person.name}</figcaption>
-              </figure>
-            )}
-            {s.extraLink && (
-              <p className="mt-8 text-lg text-muted-foreground">
-                {s.extraLink.text}{" "}
-                <a
-                  href={s.extraLink.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 font-medium text-foreground underline decoration-gold underline-offset-4"
-                >
-                  {s.extraLink.label} <ExternalLink className="h-4 w-4" />
-                </a>
-              </p>
+            {s.highlights && s.highlights.length > 0 && (
+              <aside className="reveal h-fit rounded-2xl border border-border bg-card p-8 shadow-soft">
+                <p className="eyebrow text-gold">{s.highlightsTitle}</p>
+                <ul className="mt-6 space-y-4">
+                  {s.highlights.map((h) => (
+                    <li key={h} className="flex gap-3 text-lg">
+                      <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold text-accent-foreground">
+                        <Check className="h-4 w-4" />
+                      </span>
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              </aside>
             )}
           </div>
-          <aside className="reveal h-fit rounded-2xl border border-border bg-card p-8 shadow-soft">
-            <p className="eyebrow text-gold">{s.highlightsTitle}</p>
-            <ul className="mt-6 space-y-4">
-              {s.highlights.map((h) => (
-                <li key={h} className="flex gap-3 text-lg">
-                  <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold text-accent-foreground">
-                    <Check className="h-4 w-4" />
-                  </span>
-                  {h}
-                </li>
-              ))}
-            </ul>
-          </aside>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Topics */}
       {s.topics && (
