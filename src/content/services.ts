@@ -8,6 +8,8 @@ export interface ServiceContent {
   slug: "/business-coaching" | "/grafik-webdesign-itzehoe" | "/fotografie";
   eyebrow: string;
   title: string;
+  /** Sub-headline under the page title. */
+  tagline?: string;
   metaTitle: string;
   metaDescription: string;
   intro: string[];
@@ -16,14 +18,22 @@ export interface ServiceContent {
   imagePosition?: string;
   person: { name: string; role: string };
   quote?: string;
-  highlightsTitle: string;
-  highlights: string[];
-  bodyTitle: string;
-  body: string[];
-  topics?: { title: string; intro?: string; items: { title: string; text: string }[] };
+  /** Label of the call-to-action button in the intro. */
+  ctaLabel?: string;
+  highlightsTitle?: string;
+  highlights?: string[];
+  bodyTitle?: string;
+  body?: string[];
+  topics?: {
+    title: string;
+    intro?: string;
+    items: { title: string; subtitle?: string; text: string }[];
+  };
   about?: { title: string; paragraphs: string[] };
   references?: { intro: string; items: { name: string; text: string }[] };
   extraLink?: { href: string; label: string; text: string };
+  /** Closing call-to-action block before the references. */
+  cta?: { title: string; intro?: string; text: string[]; button: string };
 }
 
 export const SERVICES: ServiceContent[] = [
