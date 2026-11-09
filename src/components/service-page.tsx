@@ -19,6 +19,11 @@ export function ServicePage({ service: s }: { service: ServiceContent }) {
               <span className="eyebrow block text-gold">{s.eyebrow}</span>
               <span className="mt-4 block text-5xl font-medium leading-[1.05] sm:text-7xl">{s.title}</span>
             </h1>
+            {s.tagline && (
+              <p className="mt-5 max-w-xl font-display text-3xl leading-snug text-navy-foreground sm:text-4xl">
+                {s.tagline}
+              </p>
+            )}
             <div className="mt-6 max-w-2xl space-y-4 text-lg leading-relaxed text-navy-foreground/85">
               {s.intro.map((p) => (
                 <p key={p}>{withBrand(p)}</p>
@@ -30,7 +35,7 @@ export function ServicePage({ service: s }: { service: ServiceContent }) {
                 hash="kontakt"
                 className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3 font-medium text-accent-foreground shadow-soft transition-transform hover:-translate-y-0.5"
               >
-                Kostenfreies Analyse-Gespräch <ArrowRight className="h-4 w-4" />
+                {s.ctaLabel ?? "Kostenfreies Analyse-Gespräch"} <ArrowRight className="h-4 w-4" />
               </Link>
               <a
                 href={CONTACT.phoneHref}
