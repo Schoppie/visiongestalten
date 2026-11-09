@@ -1,7 +1,7 @@
 # Roadmap – Global Triangle
 
-- [ ] Tonjas Ganzkörperfoto auf der Startseite nachschärfen
-- [ ] Eykes Unterseitenfotos auf das vorhandene Startseitenfoto mit Brille umstellen
+- [x] Tonjas Ganzkörperfoto auf der Startseite nachschärfen
+- [x] Eykes Unterseitenfotos auf das vorhandene Startseitenfoto mit Brille umstellen
 
 - [x] Alte Unterseiten übernehmen: Coaching, Grafik & Webdesign, Fotografie (alte Adressen beibehalten)
 - [x] Referenzen-Seite
