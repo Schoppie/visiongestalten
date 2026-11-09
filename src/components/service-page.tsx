@@ -136,6 +136,7 @@ export function ServicePage({ service: s }: { service: ServiceContent }) {
                 >
                   <span className="font-display text-4xl text-gold">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="mt-3 text-2xl font-semibold">{t.title}</h3>
+                  {t.subtitle && <p className="mt-2 font-medium text-foreground">{t.subtitle}</p>}
                   <p className="mt-3 leading-relaxed text-muted-foreground">{t.text}</p>
                 </article>
               ))}
